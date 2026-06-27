@@ -25,23 +25,40 @@ def load_cards() -> list[dict]:
     return json.loads(CARDS_PATH.read_text(encoding="utf-8"))
 
 
-def resolve_tag(cards: list[dict], tag: str | None) -> str | None:
-    """Validate a requested tag; exit with a helpful message if unknown."""
+def resolve_subject(cards: list[dict], subject: str | None) -> str | None:
+    """Validate a requested subject; exit with a helpful message if unknown."""
+    if subject is None:
+        return None
+    available = srs.all_subjects(cards)
+    if subject not in available:
+        display.show_unknown_subject(subject, available)
+        sys.exit(1)
+    return subject
+
+
+def resolve_tag(cards: list[dict], subject: str | None, tag: str | None) -> str | None:
+    """Validate a requested tag (within the chosen subject)."""
     if tag is None:
         return None
-    available = srs.all_tags(cards)
+    available = srs.all_tags(cards, subject)
     if tag not in available:
         display.show_unknown_tag(tag, available)
         sys.exit(1)
     return tag
 
 
+def _scope_text(subject: str | None, tag: str | None) -> str:
+    parts = [p for p in (subject, tag) if p]
+    return f" — [magenta]{' › '.join(parts)}[/magenta]" if parts else ""
+
+
 def run_review(args: argparse.Namespace) -> None:
     cards = load_cards()
     progress = srs.load_progress()
-    tag = resolve_tag(cards, args.tag)
+    subject = resolve_subject(cards, args.subject)
+    tag = resolve_tag(cards, subject, args.tag)
 
-    due = srs.get_due_cards(cards, progress, tag=tag, new_limit=args.new_limit)
+    due = srs.get_due_cards(cards, progress, subject=subject, tag=tag, new_limit=args.new_limit)
     if not due:
         display.show_no_cards()
         return
@@ -52,7 +69,7 @@ def run_review(args: argparse.Namespace) -> None:
 
     seen = good = hard = again_count = 0
 
-    scope = f" — [magenta]{tag}[/magenta]" if tag else ""
+    scope = _scope_text(subject, tag)
     display.console.rule(f"[bold cyan]Review Session — {len(due)} cards due{scope}[/bold cyan]")
 
     while queue or again_queue:
@@ -86,14 +103,21 @@ def run_review(args: argparse.Namespace) -> None:
 def run_stats(args: argparse.Namespace) -> None:
     cards = load_cards()
     progress = srs.load_progress()
-    tag = resolve_tag(cards, args.tag)
-    stats = srs.get_stats(cards, progress, tag=tag)
+    subject = resolve_subject(cards, args.subject)
+    tag = resolve_tag(cards, subject, args.tag)
+    stats = srs.get_stats(cards, progress, subject=subject, tag=tag)
     display.show_deck_stats(stats)
 
 
 def run_tags(args: argparse.Namespace) -> None:
     cards = load_cards()
-    display.show_tags(srs.all_tags(cards))
+    subject = resolve_subject(cards, args.subject)
+    display.show_tags(srs.all_tags(cards, subject))
+
+
+def run_subjects(args: argparse.Namespace) -> None:
+    cards = load_cards()
+    display.show_subjects(srs.all_subjects(cards))
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -101,6 +125,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command")
 
     p_review = sub.add_parser("review", help="review due cards")
+    p_review.add_argument("--subject", help="only review cards in this subject")
     p_review.add_argument("--tag", help="only review cards with this tag")
     p_review.add_argument(
         "--new-limit",
@@ -111,11 +136,16 @@ def build_parser() -> argparse.ArgumentParser:
     p_review.set_defaults(func=run_review)
 
     p_stats = sub.add_parser("stats", help="show deck statistics")
+    p_stats.add_argument("--subject", help="only count cards in this subject")
     p_stats.add_argument("--tag", help="only count cards with this tag")
     p_stats.set_defaults(func=run_stats)
 
-    p_tags = sub.add_parser("tags", help="list all tags and card counts")
+    p_tags = sub.add_parser("tags", help="list tags and card counts")
+    p_tags.add_argument("--subject", help="only list tags within this subject")
     p_tags.set_defaults(func=run_tags)
+
+    p_subjects = sub.add_parser("subjects", help="list subjects and card counts")
+    p_subjects.set_defaults(func=run_subjects)
 
     return parser
 

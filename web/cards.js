@@ -7,7 +7,8 @@ window.CARDS = [
     "tags": [
       "supervised",
       "unsupervised"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "3e5eea03-713c-4693-8cb6-039756d4ac0b",
@@ -17,7 +18,8 @@ window.CARDS = [
     "tags": [
       "feature-engineering",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "b6ccc2f1-4bcd-413b-8adc-b876334bc4a5",
@@ -26,7 +28,8 @@ window.CARDS = [
     "answer": "Classification predicts a discrete class label (e.g. spam/not-spam). Regression predicts a continuous numerical value (e.g. house price). Both are supervised learning tasks.",
     "tags": [
       "supervised"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "1ce846a1-dbdf-4a68-91ac-589c3c714656",
@@ -36,7 +39,8 @@ window.CARDS = [
     "tags": [
       "supervised",
       "unsupervised"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "fbb2711f-d3fb-4f5c-b9e6-1859735c4523",
@@ -46,7 +50,8 @@ window.CARDS = [
     "tags": [
       "supervised",
       "unsupervised"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "123e860b-9c60-49ef-a5b0-13d5fa3b7eab",
@@ -58,7 +63,8 @@ window.CARDS = [
       "linear-models",
       "optimisation",
       "regularisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "c39a2a21-a9b1-4201-a79f-adfcfa283d2f",
@@ -70,7 +76,8 @@ window.CARDS = [
       "knn",
       "linear-models",
       "trees"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "ee8783ad-3493-41e9-8362-fcd80d81f4e6",
@@ -80,7 +87,8 @@ window.CARDS = [
     "tags": [
       "linear-models",
       "optimisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "d21510fb-dd7a-40aa-af84-d0752aacde5c",
@@ -90,7 +98,8 @@ window.CARDS = [
     "tags": [
       "linear-models",
       "trees"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "6b1b20fb-49b8-4ff3-8d47-fbae82686de0",
@@ -99,7 +108,8 @@ window.CARDS = [
     "answer": "ID3 selects the feature that maximises Information Gain — the reduction in entropy after the split. Entropy H(S) = −Σ pₖ log₂(pₖ) measures class impurity. Information Gain IG(S,F) = H(S) − Σ (|Sᵥ|/|S|)·H(Sᵥ) for each value v of feature F.",
     "tags": [
       "trees"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "5ad1a3ca-e55a-4e83-85e5-052fb5deb7a5",
@@ -109,7 +119,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "trees"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "d6f377d4-89f7-4a68-b8c0-8c58680cfa75",
@@ -118,7 +129,8 @@ window.CARDS = [
     "answer": "An SVM finds the hyperplane w·x + b = 0 that maximises the margin — the distance to the nearest training examples (support vectors) on each side. The margin equals 2/‖w‖. Maximising the margin is equivalent to minimising ‖w‖², a convex quadratic problem.",
     "tags": [
       "svm"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "9a21ea39-cf12-4e99-951a-761febf3f6ba",
@@ -127,7 +139,8 @@ window.CARDS = [
     "answer": "Hard-margin SVM requires all training examples to be correctly classified (only works when data is linearly separable). Soft-margin SVM introduces slack variables ξᵢ ≥ 0 that allow misclassifications, controlled by hyperparameter C. High C → small margin (less tolerance); low C → large margin (more misclassifications allowed).",
     "tags": [
       "svm"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "a6a016d4-cf4b-4162-9950-5e099230a2b1",
@@ -136,7 +149,8 @@ window.CARDS = [
     "answer": "The kernel trick allows SVMs to implicitly map data to a high-dimensional feature space without computing the mapping explicitly. The dual problem only requires dot products k(xᵢ, xⱼ) = φ(xᵢ)·φ(xⱼ). This makes nonlinear classification tractable.",
     "tags": [
       "svm"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "a6c197bd-8ec4-4bd4-b091-b2d4fc30858b",
@@ -145,7 +159,8 @@ window.CARDS = [
     "answer": "k(xᵢ, xⱼ) = exp(−γ‖xᵢ − xⱼ‖²). It measures similarity by Gaussian decay with distance. γ controls the width: high γ → narrow Gaussians (each training example influences only nearby points); low γ → smooth decision boundary. The RBF kernel maps data into an infinite-dimensional space.",
     "tags": [
       "svm"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "ae966134-869a-4d89-bb96-137c529b0d30",
@@ -155,7 +170,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "knn"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "789248b5-3a53-4670-a146-41e496758659",
@@ -165,7 +181,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "knn"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "5a373ec9-a48d-41d4-98a9-a84e15c03005",
@@ -174,7 +191,8 @@ window.CARDS = [
     "answer": "Gradient descent minimises a differentiable loss function f(θ) by iteratively updating parameters: θ ← θ − α∇f(θ), where α is the learning rate. Starting from a random point, each step moves in the direction of steepest descent until convergence (gradient ≈ 0).",
     "tags": [
       "optimisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "e4f72fd5-2ee4-45fc-a71e-d7831b77cbe0",
@@ -183,7 +201,8 @@ window.CARDS = [
     "answer": "Bias is the systematic error from incorrect assumptions in the model. A high-bias (underfitting) model is too simple — it fails to capture the true relationship even on training data. Increasing model complexity reduces bias.",
     "tags": [
       "regularisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "226b7b0f-38c1-48fe-b3ae-69a7a2f98241",
@@ -192,7 +211,8 @@ window.CARDS = [
     "answer": "Variance is the error from the model's sensitivity to small fluctuations in the training set. High-variance (overfitting) models fit training data very well but fail on unseen data. Regularisation and more data reduce variance.",
     "tags": [
       "regularisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "a00db95b-669f-4ae1-a830-e803ceee9d33",
@@ -201,7 +221,8 @@ window.CARDS = [
     "answer": "As model complexity increases, bias decreases but variance increases, and vice versa. The goal is to find a 'zone of solutions' where both are acceptably low. Regularisation moves left (less complex), adding layers/features moves right.",
     "tags": [
       "regularisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "d8bc8afb-735b-4752-9dd9-5f6721f6b0d0",
@@ -210,7 +231,8 @@ window.CARDS = [
     "answer": "Overfitting occurs when a model performs very well on training data but poorly on unseen data. Detection: training loss is much lower than validation/test loss. Causes: model too complex, too many features, insufficient training data, or insufficient regularisation.",
     "tags": [
       "regularisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "9c2dfca0-5807-4b4d-9d2f-c3eaf7cdda06",
@@ -221,7 +243,8 @@ window.CARDS = [
       "feature-engineering",
       "regularisation",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "d56bee3f-bd76-423a-b80e-ae0ae9a2c999",
@@ -230,7 +253,8 @@ window.CARDS = [
     "answer": "L2 adds Σwⱼ² to the loss. It penalises large weights but rarely drives them to exactly zero. L2 typically gives better predictive performance than L1 when all features are relevant. In the literature: lasso = L1, ridge = L2, elastic net combines both.",
     "tags": [
       "regularisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "2a2b6b61-6b83-47a6-b1bd-0bb64303e210",
@@ -240,7 +264,8 @@ window.CARDS = [
     "tags": [
       "cnn",
       "neural-nets"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "70031273-bf44-4c5b-9916-f6d7764ad442",
@@ -251,7 +276,8 @@ window.CARDS = [
       "cnn",
       "evaluation",
       "neural-nets"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "db864752-7cf2-4383-b045-c05b28685162",
@@ -260,7 +286,8 @@ window.CARDS = [
     "answer": "Stride is the step size the filter moves at each convolution step — larger stride → smaller output. Padding adds zeros around the input border so border regions are covered and output size can be preserved. Padding is especially useful with large filters.",
     "tags": [
       "cnn"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "4b47414f-1384-410c-af58-7fd00d8e395f",
@@ -271,7 +298,8 @@ window.CARDS = [
       "evaluation",
       "neural-nets",
       "rnn"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "938cbb85-a850-45d8-b116-c040f3289c4d",
@@ -281,7 +309,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "mlops"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "3d5f0d20-0923-4d72-bc86-8f49761fd344",
@@ -291,7 +320,8 @@ window.CARDS = [
     "tags": [
       "feature-engineering",
       "mlops"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "c2f9e0f2-9991-4b5e-96de-642c7d3e9263",
@@ -300,7 +330,8 @@ window.CARDS = [
     "answer": "A baseline is the simplest possible predictor (e.g. always predict the majority class, or use a simple heuristic). It sets a lower bound on performance that any ML model must beat. Without a baseline you cannot tell whether your model actually learned anything useful.",
     "tags": [
       "mlops"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "d97ca140-bd7c-4396-8979-314a0dbaf64c",
@@ -311,7 +342,8 @@ window.CARDS = [
       "evaluation",
       "feature-engineering",
       "mlops"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "d3bdc3a8-8f9d-4251-b70c-a8274035cb94",
@@ -322,7 +354,8 @@ window.CARDS = [
       "feature-engineering",
       "mlops",
       "regularisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "aafb4afe-1d81-4cec-b8cc-174217daf06d",
@@ -331,7 +364,8 @@ window.CARDS = [
     "answer": "Training set: used to learn model parameters. Validation set: used to tune hyperparameters and make model selection decisions. Test set: held out until the final evaluation to give an unbiased estimate of generalisation performance. Never use the test set during development.",
     "tags": [
       "evaluation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "9d160cd8-c987-4e87-9094-0415d30c7900",
@@ -340,7 +374,8 @@ window.CARDS = [
     "answer": "Cross-validation (k-fold) splits the data into k folds, trains on k-1 folds and evaluates on the remaining fold, rotating until every fold has been the evaluation fold. Average performance is a robust estimate. Use it when your dataset is too small to spare a separate validation set.",
     "tags": [
       "evaluation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "be90d296-f709-42b6-b820-b4fdf0c9455d",
@@ -349,7 +384,8 @@ window.CARDS = [
     "answer": "Grid search discretises each hyperparameter into a set of candidate values and evaluates every combination by training a model and measuring validation performance. Simple but exponentially expensive in the number of hyperparameters. Often sufficient in practice for small search spaces.",
     "tags": [
       "optimisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "be07d86f-b2e6-488e-86f7-0770b00edf7e",
@@ -360,7 +396,8 @@ window.CARDS = [
       "feature-engineering",
       "neural-nets",
       "trees"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "bead5ce3-a723-4ab5-9eb6-a29b7db0e0a9",
@@ -369,7 +406,8 @@ window.CARDS = [
     "answer": "BCE = −yᵢ log₂(ŷᵢ) − (1−yᵢ) log₂(1−ŷᵢ). It is used for binary classification (one sigmoid output). It is also used for multi-label classification (C independent sigmoid units, one per class).",
     "tags": [
       "trees"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "f3df2fa3-8201-4a40-b94f-98324ed3a629",
@@ -378,7 +416,8 @@ window.CARDS = [
     "answer": "Softmax: ŷᵢ,ⱼ = e^{zᵢ,ⱼ} / Σₖ e^{zᵢ,ₖ}. Outputs sum to 1 → represents a probability distribution over C classes (used in multiclass classification). Sigmoid: each output unit is independent (0,1). Outputs can sum to any value in (0,C) → used in binary or multi-label classification.",
     "tags": [
       "neural-nets"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "c5b84287-4652-4386-a39e-b9cabf7cb165",
@@ -387,7 +426,8 @@ window.CARDS = [
     "answer": "Common strategies: random normal (mean 0, std 0.05), random uniform ([−0.05, 0.05]), Xavier normal (std = √(2/(in+out))), Xavier uniform (±√(6/(in+out))). Biases are usually initialised to zero. Xavier variants are recommended; the choice can be a tunable hyperparameter.",
     "tags": [
       "neural-nets"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "21a34967-2530-48d7-a1c4-c41094f771e1",
@@ -396,7 +436,8 @@ window.CARDS = [
     "answer": "Instead of computing the gradient over the full dataset (gradient descent) or a single example (SGD), minibatch SGD approximates the gradient using a small random subset (minibatch) of the training data. Typical batch sizes: 32, 64, 128, 256. This speeds up computation and reduces memory usage.",
     "tags": [
       "optimisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "c3f8725d-e16a-480e-9711-81ceb649bcf0",
@@ -405,7 +446,8 @@ window.CARDS = [
     "answer": "Momentum accumulates a running average of past gradients and uses it to guide parameter updates. It dampens oscillations and accelerates convergence in relevant directions, removing the need to manually tune learning rate schedules.",
     "tags": [
       "optimisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "4fd04d39-294b-4a36-824c-1b1072cbd092",
@@ -415,7 +457,8 @@ window.CARDS = [
     "tags": [
       "neural-nets",
       "optimisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "21ec8957-7b03-416a-a92b-728c797260e6",
@@ -425,7 +468,8 @@ window.CARDS = [
     "tags": [
       "llm",
       "optimisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "398d1004-31f0-4081-a932-1d41b5e50bbe",
@@ -435,7 +479,8 @@ window.CARDS = [
     "tags": [
       "neural-nets",
       "regularisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "0bcde19a-efec-43b4-a96f-95cdf48acc3e",
@@ -444,7 +489,8 @@ window.CARDS = [
     "answer": "Early stopping saves a checkpoint after each epoch and monitors validation performance. Training is stopped when validation performance stops improving (or begins to degrade). The best checkpoint is returned. It prevents overfitting without needing to choose explicit regularisation strength.",
     "tags": [
       "regularisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "3f9699c9-4664-4886-a81a-309534a4988b",
@@ -456,7 +502,8 @@ window.CARDS = [
       "neural-nets",
       "optimisation",
       "regularisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "dd70897b-d193-421c-b082-62506a21a94e",
@@ -466,7 +513,8 @@ window.CARDS = [
     "tags": [
       "llm",
       "mlops"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "337ccc58-c2dc-44c4-9e25-2e82ef0c3a6a",
@@ -477,7 +525,8 @@ window.CARDS = [
       "llm",
       "rnn",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "e87c2dff-f9a3-4ace-8b40-1f8d21748873",
@@ -491,7 +540,8 @@ window.CARDS = [
       "neural-nets",
       "rnn",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "61163b68-47cd-4ef1-9f13-0714811294b3",
@@ -502,7 +552,8 @@ window.CARDS = [
       "cnn",
       "regularisation",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "440fa60d-b1cf-4c36-b827-48b7af2f803d",
@@ -513,7 +564,8 @@ window.CARDS = [
       "neural-nets",
       "optimisation",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "fc286404-7d04-4a93-b510-c55c03c78e72",
@@ -523,7 +575,8 @@ window.CARDS = [
     "tags": [
       "llm",
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "c8db935a-7031-4a0f-b6f0-724099952a4c",
@@ -532,7 +585,8 @@ window.CARDS = [
     "answer": "An n-gram model approximates P(tᵢ | t₁,…,tᵢ₋₁) using only the previous n−1 tokens (Markov assumption). Probabilities are estimated by counting n-gram frequencies in a training corpus. Common choices: bigram (n=2), trigram (n=3). n-gram counts grow exponentially with n.",
     "tags": [
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "b3183e4b-6bc7-4438-a1d1-a6cf14b88c2e",
@@ -541,7 +595,8 @@ window.CARDS = [
     "answer": "P(tᵢ | tᵢ₋₂, tᵢ₋₁) = C(tᵢ₋₂, tᵢ₋₁, tᵢ) / C(tᵢ₋₂, tᵢ₋₁), where C(·) is the count of that n-gram in the training corpus. MLE becomes more reliable with larger corpora.",
     "tags": [
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "1f92287b-13a4-4e8f-8fa4-87e9b65141d9",
@@ -550,7 +605,8 @@ window.CARDS = [
     "answer": "If a higher-order n-gram (e.g. trigram) was not seen in training, back off to a lower-order n-gram (bigram, then unigram). This prevents zero probabilities for unseen n-grams while retaining higher-order context when available.",
     "tags": [
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "e7451b43-323a-4925-a30d-552c7732e19d",
@@ -559,7 +615,8 @@ window.CARDS = [
     "answer": "Laplace smoothing adds 1 to every token count: P(tᵢ) = (C(tᵢ)+1)/(W+V), where W = total tokens, V = vocabulary size. Without it, any token absent from the training corpus gets probability zero, making the model unable to handle out-of-vocabulary words.",
     "tags": [
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "d923f197-c1b1-4891-be7d-0a5590287df6",
@@ -571,7 +628,8 @@ window.CARDS = [
       "nlp",
       "rnn",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "31008b4f-d673-4d8e-a4f8-a69f141c495a",
@@ -581,7 +639,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "52bbffcd-8916-404c-bcf5-cfd750e64061",
@@ -592,7 +651,8 @@ window.CARDS = [
       "evaluation",
       "llm",
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "b25cda85-6ad6-41e5-bdbb-b554ba3e65dd",
@@ -601,7 +661,8 @@ window.CARDS = [
     "answer": "ROUGE-1 measures unigram (single-token) overlap between generated text g and reference text r: Recall = (matching tokens) / (total tokens in r). It captures how much of the reference content appears in the generated output. Scores range from 0 to 1; only meaningful comparatively across models on the same test set.",
     "tags": [
       "evaluation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "10b3e39b-87ff-43b9-9029-3b723eaeac95",
@@ -611,7 +672,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "2fbead3c-7ec9-482b-9454-e2b0e079e6e7",
@@ -621,7 +683,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "2fb8f99c-92b2-4dd4-94b0-0d50cc09d2d2",
@@ -632,7 +695,8 @@ window.CARDS = [
       "feature-engineering",
       "neural-nets",
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "6f4644ab-7963-4bf8-b2cc-3375d7afbd8b",
@@ -641,7 +705,8 @@ window.CARDS = [
     "answer": "BoW represents a document as a vector of token counts (or binary presence indicators), ignoring word order. The vector dimension equals the vocabulary size. Simple and effective for text classification but loses sequential information.",
     "tags": [
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "e69c2177-7648-4841-8d6a-7fd971ae47c1",
@@ -651,7 +716,8 @@ window.CARDS = [
     "tags": [
       "neural-nets",
       "rnn"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "83416359-e487-4db8-b9e3-299857dc0ca0",
@@ -660,7 +726,8 @@ window.CARDS = [
     "answer": "An MLP is a neural network of stacked fully-connected layers. Each layer computes z = Wx + b followed by a non-linear activation (e.g. ReLU). Information flows in one direction (input → hidden → output). Universal approximators given enough hidden units.",
     "tags": [
       "neural-nets"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "33c488d7-860a-4d69-8be3-e2f002964bca",
@@ -669,7 +736,8 @@ window.CARDS = [
     "answer": "Instead of computing gradients over the full dataset or a single sample, mini-batch gradient descent uses a small random subset (batch) of data per update. It is faster than full-batch gradient descent and more stable than single-sample SGD. Batch size is a hyperparameter (commonly 32–256).",
     "tags": [
       "optimisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "2d7be77f-0439-4e54-b81d-5b6bed56f2ae",
@@ -679,7 +747,8 @@ window.CARDS = [
     "tags": [
       "neural-nets",
       "rnn"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "4f4dbaeb-a473-4eb0-a10a-417340a1bf9f",
@@ -689,7 +758,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "rnn"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "90c81132-b4c3-4dac-aeab-10464dcb5a92",
@@ -701,7 +771,8 @@ window.CARDS = [
       "neural-nets",
       "rnn",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "1f619cf1-d7be-4203-b20c-e9a773b2dbc6",
@@ -713,7 +784,8 @@ window.CARDS = [
       "llm",
       "nlp",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "8bf4d4ae-8c14-495f-b669-e0b963ac135b",
@@ -723,7 +795,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "dfdca8d7-0fe5-42ff-96de-7f60378fa03d",
@@ -733,7 +806,8 @@ window.CARDS = [
     "tags": [
       "neural-nets",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "6a05a6e7-341b-43e2-84ec-b48c46b6ef94",
@@ -743,7 +817,8 @@ window.CARDS = [
     "tags": [
       "neural-nets",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "bc773ea8-4b49-4f16-956e-c0aefda5612f",
@@ -754,7 +829,8 @@ window.CARDS = [
       "neural-nets",
       "nlp",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "dd2306a9-88f0-41e3-8999-0c9ae52b3cca",
@@ -763,7 +839,8 @@ window.CARDS = [
     "answer": "Multi-head attention runs H independent self-attention heads in parallel, each with its own Q/K/V weight matrices. Each head's output has reduced dimensionality (d_k/H). Outputs from all heads are concatenated and projected. This allows the model to simultaneously attend to different types of relationships (e.g. syntactic, semantic, long-range) across different representation subspaces.",
     "tags": [
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "5d35f529-0d04-411c-82af-b35b973e124e",
@@ -772,7 +849,8 @@ window.CARDS = [
     "answer": "RoPE encodes positional information by rotating query and key vectors based on their token position before computing attention scores. Pairs of dimensions are rotated by angle θ_p·t (position t, frequency θ_p). A key property: the angle between rotated vectors encodes their relative distance, enabling the model to generalise to sequences longer than those seen during training.",
     "tags": [
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "3e441687-d84b-4ae3-8a2e-6aae5ea9b2c7",
@@ -781,7 +859,8 @@ window.CARDS = [
     "answer": "A residual connection adds the layer's input directly to its output: y = f(x) + x. It solves the vanishing gradient problem in deep networks: during backpropagation the gradient of earlier layers receives an additive +1 term, preventing it from shrinking to zero even when weights are small.",
     "tags": [
       "neural-nets"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "58246343-87a7-416e-9c4d-039cca78bda4",
@@ -791,7 +870,8 @@ window.CARDS = [
     "tags": [
       "neural-nets",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "f7d1ba27-c8e7-4874-b9f3-187b2d63f4e8",
@@ -802,7 +882,8 @@ window.CARDS = [
       "feature-engineering",
       "neural-nets",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "de677116-5409-41c1-974a-524425ff69e3",
@@ -812,7 +893,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "2f155ae0-dfb8-425a-92ae-39a622ccb539",
@@ -822,7 +904,8 @@ window.CARDS = [
     "tags": [
       "neural-nets",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "bdd22025-bb58-45b5-bc3c-ae7e6f175939",
@@ -832,7 +915,8 @@ window.CARDS = [
     "tags": [
       "neural-nets",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "8cddd0e1-afff-4ca1-8ee0-6b180cce38a4",
@@ -843,7 +927,8 @@ window.CARDS = [
       "evaluation",
       "neural-nets",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "f62e006d-89e4-45ff-baa8-6d5ab88c37a4",
@@ -854,7 +939,8 @@ window.CARDS = [
       "llm",
       "mlops",
       "supervised"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "3f1bf81c-da0d-4866-9ec2-51b852a76be5",
@@ -864,7 +950,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "1ddbe8f8-aec8-4435-bb66-77367887694c",
@@ -875,7 +962,8 @@ window.CARDS = [
       "llm",
       "nlp",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "b0a2b797-158e-4f67-844a-60a78a251ad5",
@@ -885,7 +973,8 @@ window.CARDS = [
     "tags": [
       "ensemble",
       "evaluation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "ec7023f1-d8b5-41a7-bd1c-346e5fb14cab",
@@ -894,7 +983,8 @@ window.CARDS = [
     "answer": "Bagging: create B random bootstrap samples of the training data and train a weak model on each, then average/vote. Reduces variance. Boosting: iteratively train weak models where each new model focuses on fixing the errors of previous ones. Reduces bias. Boosting is sequential; bagging is parallelisable.",
     "tags": [
       "ensemble"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "db493485-28e1-439b-914b-78e829d94191",
@@ -903,7 +993,8 @@ window.CARDS = [
     "answer": "Random forest adds one modification to bagging: at each split, only a random subset of features is considered (not all features). This de-correlates the trees — if one feature is dominant, it won't appear in every tree, reducing correlated errors. Key hyperparameters: number of trees B, size of the random feature subset per split.",
     "tags": [
       "ensemble"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "ca6e887e-8d21-4ce8-9886-70ed7857dd6b",
@@ -915,7 +1006,8 @@ window.CARDS = [
       "neural-nets",
       "optimisation",
       "trees"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "b972fdc9-be26-4d70-a4eb-a44636bd9992",
@@ -926,7 +1018,8 @@ window.CARDS = [
       "ensemble",
       "neural-nets",
       "optimisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "de36132e-969e-4450-92c6-f9dc7abd3bb5",
@@ -937,7 +1030,8 @@ window.CARDS = [
       "ensemble",
       "optimisation",
       "regularisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "55295d87-6774-4ff2-bb46-87fc5b225e44",
@@ -948,7 +1042,8 @@ window.CARDS = [
       "evaluation",
       "neural-nets",
       "rnn"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "5cfbd845-52e9-4eaa-82f3-d86c78ac797e",
@@ -958,7 +1053,8 @@ window.CARDS = [
     "tags": [
       "neural-nets",
       "rnn"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "60dcf0e1-1b8f-4317-b932-1ccb4659eb51",
@@ -968,7 +1064,8 @@ window.CARDS = [
     "tags": [
       "linear-models",
       "svm"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "fce4b80b-716f-4dfb-8124-8151277ebade",
@@ -977,7 +1074,8 @@ window.CARDS = [
     "answer": "A learning paradigm where both input X and output Y are sequences of potentially different lengths. Applications: machine translation, summarisation, dialogue systems. Architecture: an encoder reads X into a fixed embedding vector; a decoder generates Y from that embedding. Both are trained jointly via backpropagation. An attention mechanism allows the decoder to selectively focus on encoder states rather than relying on a single compressed vector.",
     "tags": [
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "ef7432ec-ef34-4ffb-8fcd-1375fdc23d67",
@@ -986,7 +1084,8 @@ window.CARDS = [
     "answer": "A table summarising classification results across classes. For binary classification: rows = actual class, columns = predicted class. Cells: TP (true positives), TN (true negatives), FP (false positives), FN (false negatives). Useful for identifying mistake patterns (e.g. which classes are most often confused).",
     "tags": [
       "evaluation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "cbf92d95-3760-4e4f-9617-4d9bca849015",
@@ -995,7 +1094,8 @@ window.CARDS = [
     "answer": "Precision = TP / (TP + FP): of all examples predicted positive, what fraction are truly positive? (Quality of positive predictions.) Recall = TP / (TP + FN): of all truly positive examples, what fraction did the model find? (Coverage of positives.) Spam detection: high precision (avoid misclassifying legit mail); lower recall is tolerable.",
     "tags": [
       "evaluation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "fbb82eb3-2e13-4d7e-95c5-da31cca0acf9",
@@ -1004,7 +1104,8 @@ window.CARDS = [
     "answer": "Increasing precision typically decreases recall and vice versa. You can tune the tradeoff by adjusting the decision threshold: a higher threshold (e.g. 0.9 instead of 0.5) means fewer positive predictions → higher precision, lower recall. Choose by assigning weights to FP and FN based on the business cost of each error type.",
     "tags": [
       "evaluation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "8bada766-6e57-4b23-bbc9-8d2ebc6e78c0",
@@ -1014,7 +1115,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "feature-engineering"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "df3afaea-58a3-4026-9f95-fdc830c2c617",
@@ -1024,7 +1126,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "feature-engineering"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "0c85ced1-6b1c-44f5-b242-d44a0abff64f",
@@ -1034,7 +1137,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "feature-engineering"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "50bb9f03-6679-49b8-8a92-eb00527e9ea9",
@@ -1044,7 +1148,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "linear-models"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "b9215c8a-f38d-4982-87b6-fa82d48b52a6",
@@ -1054,7 +1159,8 @@ window.CARDS = [
     "tags": [
       "feature-engineering",
       "neural-nets"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "ae9c8826-724a-4528-a8ca-86c85f0c5e10",
@@ -1065,7 +1171,8 @@ window.CARDS = [
       "feature-engineering",
       "mlops",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "79a67c17-26e9-4b3a-9cd6-724a005bfcea",
@@ -1075,7 +1182,8 @@ window.CARDS = [
     "tags": [
       "feature-engineering",
       "regularisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "06716b3d-71e8-434d-9064-8a1c2327a3f1",
@@ -1085,7 +1193,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "mlops"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "23072dfd-4d73-42c9-b1e5-7bb9feac5906",
@@ -1095,7 +1204,8 @@ window.CARDS = [
     "tags": [
       "feature-engineering",
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "0c129729-0a47-4a1f-870b-2487cc277c25",
@@ -1105,7 +1215,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "feature-engineering"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "13d50f3c-e060-4174-bf9d-3e2a7d794127",
@@ -1117,7 +1228,8 @@ window.CARDS = [
       "mlops",
       "optimisation",
       "trees"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "5ce07cc6-69e6-412a-89e7-0a88f49c8c08",
@@ -1126,7 +1238,8 @@ window.CARDS = [
     "answer": "Instruction tuning fine-tunes an LLM on diverse (instruction, response) pairs to follow arbitrary natural-language instructions. ChatML format: <|im_start|>{role}\\n{message}\\n<|im_end|>, with roles: system, user, assistant. The system message provides context/persona; user provides instructions; assistant provides responses. The format must match between training and inference.",
     "tags": [
       "llm"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "f86ebc9b-595d-4068-a615-9f22d645d7b8",
@@ -1136,7 +1249,8 @@ window.CARDS = [
     "tags": [
       "llm",
       "mlops"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "aa6e9320-387a-4404-9736-36da294d089a",
@@ -1146,7 +1260,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "llm"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "473c4d9e-1f34-420c-a45b-a12721a7a20e",
@@ -1156,7 +1271,8 @@ window.CARDS = [
     "tags": [
       "llm",
       "neural-nets"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "6db529c2-3a46-4ca9-ada1-0fda290c8257",
@@ -1167,7 +1283,8 @@ window.CARDS = [
       "evaluation",
       "feature-engineering",
       "llm"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "c4ad2db1-0468-4491-8c2c-be130a460cb4",
@@ -1176,7 +1293,8 @@ window.CARDS = [
     "answer": "Instead of a fixed k, top-p sampling selects the smallest set of tokens whose cumulative probability exceeds threshold p (e.g. 0.9). When the model is confident (peaked distribution), fewer tokens are considered. When uncertain (flat distribution), more tokens enter the nucleus. This adapts to the model's uncertainty per token — often combined with temperature and top-k.",
     "tags": [
       "llm"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "52c50ae8-75d0-42ae-91bd-32f6505ef294",
@@ -1186,7 +1304,8 @@ window.CARDS = [
     "tags": [
       "llm",
       "neural-nets"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "a7a57a0a-744e-4ae1-9992-5a3333b81a36",
@@ -1196,7 +1315,8 @@ window.CARDS = [
     "tags": [
       "llm",
       "mlops"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "6ba7290a-2485-409c-96f7-a0878257ea95",
@@ -1206,7 +1326,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "084dad47-1e29-4de6-83c3-7b17f5497cdc",
@@ -1216,7 +1337,8 @@ window.CARDS = [
     "tags": [
       "llm",
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "8517c734-569f-4c50-90f4-7b5fc0b3b339",
@@ -1228,7 +1350,8 @@ window.CARDS = [
       "llm",
       "nlp",
       "optimisation"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "70092ab1-2b0a-4b6c-9f28-b73b6c18e941",
@@ -1239,7 +1362,8 @@ window.CARDS = [
       "cnn",
       "llm",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "65bf0bf5-a49f-4721-9f50-456278d0bbde",
@@ -1250,7 +1374,8 @@ window.CARDS = [
       "evaluation",
       "llm",
       "nlp"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "7530e2da-fd6f-4e09-88c3-6d11bf63895c",
@@ -1261,7 +1386,8 @@ window.CARDS = [
       "llm",
       "nlp",
       "transformers"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "8e7c8580-fcce-4e19-a9fd-a4991aaa40f9",
@@ -1270,7 +1396,8 @@ window.CARDS = [
     "answer": "Training-serving skew occurs when the feature distribution seen in production differs from training data. Causes: feature computation pipeline differs between training and serving; data drift (user behaviour changes); concept drift (relationship between features and label changes). Detection: monitor feature statistics and prediction distributions in production.",
     "tags": [
       "mlops"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "543d7669-2b4c-4d9a-bb1b-3ac8dcf970e4",
@@ -1280,7 +1407,8 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "mlops"
-    ]
+    ],
+    "subject": "Machine Learning"
   },
   {
     "id": "d380f12f-ac6f-4720-8fb9-0e3f74eec4f0",
@@ -1290,6 +1418,1125 @@ window.CARDS = [
     "tags": [
       "evaluation",
       "mlops"
+    ],
+    "subject": "Machine Learning"
+  },
+  {
+    "id": "aa2d315f-787f-4a25-bde6-2a6d3bed7ebb",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the difference between a population and a sample?",
+    "answer": "A population is the entire set of items you want to draw conclusions about. A sample is a subset actually observed. Statistics computed on a sample (e.g. sample mean) estimate the corresponding population parameters. Good sampling aims to be representative so estimates generalise.",
+    "tags": [
+      "descriptive-stats",
+      "sampling"
+    ]
+  },
+  {
+    "id": "b230548e-a498-47e4-8dc0-8e4838297238",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the difference between descriptive and inferential statistics?",
+    "answer": "Descriptive statistics summarise observed data (mean, variance, charts). Inferential statistics use a sample to draw probabilistic conclusions about a larger population (hypothesis tests, confidence intervals, regression).",
+    "tags": [
+      "descriptive-stats"
+    ]
+  },
+  {
+    "id": "91882f86-2cd3-4883-9a89-6267b1e4229f",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "When is the median preferred over the mean?",
+    "answer": "The median (middle value) is preferred when data is skewed or contains outliers, because it is robust — unaffected by extreme values. The mean is pulled toward outliers. E.g. for income data, median is more representative of a 'typical' value.",
+    "tags": [
+      "descriptive-stats"
+    ]
+  },
+  {
+    "id": "aded4385-a487-4d93-8ee4-b3b2efa8d4f4",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What do variance and standard deviation measure?",
+    "answer": "Both measure spread around the mean. Variance = average squared deviation from the mean, σ² = (1/N)Σ(xᵢ−μ)². Standard deviation σ = √variance, in the same units as the data. Larger values mean more dispersion.",
+    "tags": [
+      "descriptive-stats"
+    ]
+  },
+  {
+    "id": "a38551c5-0919-4741-9429-3f2b11b63260",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the normal distribution and the 68-95-99.7 rule?",
+    "answer": "The normal (Gaussian) distribution is a symmetric bell curve defined by mean μ and std σ. The empirical rule: ~68% of values fall within μ±1σ, ~95% within μ±2σ, ~99.7% within μ±3σ. Many natural phenomena and sample means are approximately normal.",
+    "tags": [
+      "distributions"
+    ]
+  },
+  {
+    "id": "e2dc2ae0-05d9-4532-80c5-9aca7c806ce3",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the Central Limit Theorem (CLT) and why does it matter?",
+    "answer": "The CLT states that the distribution of the sample mean approaches a normal distribution as sample size grows, regardless of the population's shape (given finite variance). It underpins confidence intervals and t-tests — it's why we can use normal-based inference even on non-normal data.",
+    "tags": [
+      "distributions",
+      "sampling"
+    ]
+  },
+  {
+    "id": "b25cbf73-9fe0-43ec-82f4-0479402c2f64",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the difference between standard deviation and standard error?",
+    "answer": "Standard deviation measures variability of individual data points. Standard error (SE) measures variability of a statistic (e.g. the sample mean) across repeated samples: SE = σ/√n. SE shrinks as sample size n grows; standard deviation does not.",
+    "tags": [
+      "descriptive-stats",
+      "sampling"
+    ]
+  },
+  {
+    "id": "c8deb784-f8fd-475e-8c74-92a5521d779d",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What does a 95% confidence interval actually mean?",
+    "answer": "If you repeated the sampling procedure many times and built an interval each time, ~95% of those intervals would contain the true parameter. It is NOT a 95% probability that the true value lies in this specific interval. It quantifies estimation uncertainty.",
+    "tags": [
+      "hypothesis-testing",
+      "sampling"
+    ]
+  },
+  {
+    "id": "dac8fb93-28ce-45cf-898a-a839229a42f2",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is a p-value?",
+    "answer": "The p-value is the probability of observing data at least as extreme as what you got, assuming the null hypothesis is true. A small p-value (e.g. < 0.05) suggests the observed effect is unlikely under the null, providing evidence against it. It is NOT the probability the null is true.",
+    "tags": [
+      "hypothesis-testing"
+    ]
+  },
+  {
+    "id": "4977e83a-9b32-421e-869d-6501191eceb9",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the difference between Type I and Type II errors?",
+    "answer": "Type I error (false positive): rejecting a true null hypothesis — probability α. Type II error (false negative): failing to reject a false null — probability β. Lowering α (stricter threshold) tends to raise β. There is a tradeoff between them.",
+    "tags": [
+      "hypothesis-testing"
+    ]
+  },
+  {
+    "id": "8ae19c54-dda4-4e19-9910-f8f04c84db6f",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is statistical power?",
+    "answer": "Power = 1 − β, the probability of correctly detecting a true effect (rejecting a false null). Power increases with larger sample size, larger effect size, lower variance, and higher α. Studies are typically designed for 80% power.",
+    "tags": [
+      "experiment-design",
+      "hypothesis-testing"
+    ]
+  },
+  {
+    "id": "cc7998dc-60c4-4ad3-9417-a37cb248c6b6",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What are the null and alternative hypotheses?",
+    "answer": "The null hypothesis (H₀) states there is no effect/difference (the default to disprove). The alternative (H₁) states there is an effect. Tests gather evidence to either reject H₀ in favour of H₁, or fail to reject H₀ — you never 'prove' the null.",
+    "tags": [
+      "hypothesis-testing"
+    ]
+  },
+  {
+    "id": "a754ae30-d01e-4e3c-a508-95096483b465",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "When do you use a t-test?",
+    "answer": "A t-test compares means. One-sample: is a mean different from a value? Two-sample (independent): do two groups have different means? Paired: do matched pairs differ? It assumes approximately normal data (or large n via CLT) and uses the t-distribution to account for estimating variance from the sample.",
+    "tags": [
+      "hypothesis-testing"
+    ]
+  },
+  {
+    "id": "411a8947-9ae0-416f-973f-d11cb2c5fde6",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What does a chi-square test assess?",
+    "answer": "The chi-square test assesses categorical data. Goodness-of-fit: do observed frequencies match an expected distribution? Test of independence: are two categorical variables associated (via a contingency table)? It compares observed vs expected counts.",
+    "tags": [
+      "hypothesis-testing"
+    ]
+  },
+  {
+    "id": "4530456e-fb54-47f2-9e1d-32740e6d8de3",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is ANOVA used for?",
+    "answer": "ANOVA (Analysis of Variance) tests whether the means of three or more groups differ. It compares between-group variance to within-group variance (F-statistic). A significant result says at least one group mean differs; post-hoc tests identify which.",
+    "tags": [
+      "hypothesis-testing"
+    ]
+  },
+  {
+    "id": "4c820dc1-39bd-4d4f-8d7e-12f5db8f1212",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "Why does correlation not imply causation?",
+    "answer": "Two variables can move together due to a confounding variable, reverse causation, or coincidence, without one causing the other. Establishing causation requires controlled experiments (randomisation) or careful causal inference, not just observed association.",
+    "tags": [
+      "correlation",
+      "experiment-design"
+    ]
+  },
+  {
+    "id": "8c905077-c1ba-411b-9247-bf5ccecbb28a",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the difference between Pearson and Spearman correlation?",
+    "answer": "Pearson measures linear correlation between two continuous variables (sensitive to outliers, assumes linearity). Spearman measures monotonic correlation using ranks (robust to outliers, captures non-linear-but-monotonic relationships). Use Spearman for ordinal or non-linear data.",
+    "tags": [
+      "correlation"
+    ]
+  },
+  {
+    "id": "ccb2914a-7af6-4ea8-8a29-dc1562f460c4",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What are the key components of an A/B test?",
+    "answer": "Randomly assign users to control (A) and treatment (B), expose them to different variants, and compare a predefined metric. Requirements: a clear hypothesis, randomisation, a primary metric, adequate sample size (power analysis), and a significance threshold set in advance.",
+    "tags": [
+      "ab-testing",
+      "experiment-design"
+    ]
+  },
+  {
+    "id": "8c2303e2-5882-486c-93af-f2bc2de8b02f",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the difference between statistical and practical significance?",
+    "answer": "Statistical significance means an effect is unlikely due to chance (small p-value). Practical significance means the effect is large enough to matter in the real world. With huge samples, tiny, useless effects can be statistically significant — always check effect size.",
+    "tags": [
+      "ab-testing",
+      "hypothesis-testing"
+    ]
+  },
+  {
+    "id": "d8670364-0eef-404a-933b-024adcc87980",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the multiple comparisons problem?",
+    "answer": "Testing many hypotheses inflates the chance of at least one false positive. At α=0.05, testing 20 independent true nulls gives ~64% chance of a spurious 'significant' result. Corrections like Bonferroni (divide α by the number of tests) or FDR control this.",
+    "tags": [
+      "experiment-design",
+      "hypothesis-testing"
+    ]
+  },
+  {
+    "id": "02a7a7e6-4e99-4d2e-8dfb-9c61a3865b08",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is Bayes' theorem?",
+    "answer": "P(A|B) = P(B|A)·P(A) / P(B). It updates the probability of A given evidence B. Used in classification (Naive Bayes), medical testing (updating disease probability given a test result), and Bayesian inference.",
+    "tags": [
+      "bayesian",
+      "probability"
+    ]
+  },
+  {
+    "id": "2b62cb60-adf0-44e0-8661-8efa1246037f",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the difference between a prior and a posterior in Bayesian statistics?",
+    "answer": "The prior P(θ) encodes belief about a parameter before seeing data. The posterior P(θ|data) ∝ likelihood × prior is the updated belief after observing data. Bayesian inference is the process of turning priors into posteriors via Bayes' theorem.",
+    "tags": [
+      "bayesian",
+      "probability"
+    ]
+  },
+  {
+    "id": "8e686d12-c402-467d-8ce1-761f051772f7",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the difference between the Bernoulli and Binomial distributions?",
+    "answer": "A Bernoulli distribution models a single binary trial (success with probability p). A Binomial distribution models the number of successes in n independent Bernoulli trials, with mean np and variance np(1−p).",
+    "tags": [
+      "distributions",
+      "probability"
+    ]
+  },
+  {
+    "id": "2e2fdb36-90f9-46d4-bf6d-eb9d1f75e059",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "When is the Poisson distribution used?",
+    "answer": "The Poisson distribution models the count of events in a fixed interval of time/space, given a constant average rate λ, with events independent. Mean = variance = λ. Examples: arrivals per minute, defects per unit, website hits per second.",
+    "tags": [
+      "distributions",
+      "probability"
+    ]
+  },
+  {
+    "id": "3ed3be86-5170-4aab-84c6-dadf7b108d94",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is skewness?",
+    "answer": "Skewness measures asymmetry of a distribution. Right (positive) skew: a long right tail, mean > median (e.g. income). Left (negative) skew: long left tail, mean < median. Zero skew is symmetric (e.g. normal).",
+    "tags": [
+      "descriptive-stats",
+      "distributions"
+    ]
+  },
+  {
+    "id": "e219a9bd-4553-4985-887c-685680fab4aa",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "How does the IQR method detect outliers?",
+    "answer": "The interquartile range IQR = Q3 − Q1. Values below Q1 − 1.5·IQR or above Q3 + 1.5·IQR are flagged as outliers. It is robust because quartiles are not influenced by extreme values. This is the basis of box plots.",
+    "tags": [
+      "descriptive-stats"
+    ]
+  },
+  {
+    "id": "f739dcc6-714a-41d3-926b-b310bd445d2a",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is selection (sampling) bias?",
+    "answer": "Selection bias occurs when the sample is not representative of the population, so conclusions don't generalise. Examples: survivorship bias (only analysing survivors), non-response bias, convenience sampling. Randomisation and careful sampling design reduce it.",
+    "tags": [
+      "experiment-design",
+      "sampling"
+    ]
+  },
+  {
+    "id": "373cf23f-fdef-44a3-920e-e03413b7b667",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is Simpson's paradox?",
+    "answer": "A trend that appears in several groups can reverse when the groups are combined, due to a confounding/lurking variable and unequal group sizes. It warns against interpreting aggregated data without accounting for subgroups.",
+    "tags": [
+      "correlation",
+      "experiment-design"
+    ]
+  },
+  {
+    "id": "ee3d78fb-5be6-4ddd-ad0f-a8ace85003b2",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the law of large numbers?",
+    "answer": "As the number of independent trials grows, the sample average converges to the expected value. It justifies why larger samples give more reliable estimates. (Distinct from the CLT, which describes the distribution's shape, not just convergence of the mean.)",
+    "tags": [
+      "probability",
+      "sampling"
+    ]
+  },
+  {
+    "id": "dd3b3781-f85c-4289-8abe-2d9642d3d1e9",
+    "subject": "Data Science",
+    "source": "GEN-DS",
+    "question": "What is the difference between covariance and correlation?",
+    "answer": "Covariance measures how two variables vary together but its magnitude depends on units (unbounded). Correlation is covariance normalised by the product of standard deviations, giving a unitless value in [−1, 1], making it comparable across datasets.",
+    "tags": [
+      "correlation",
+      "descriptive-stats"
+    ]
+  },
+  {
+    "id": "09d9c709-c837-4a25-9ae3-fa97a6da8a25",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is the difference between a list and a tuple in Python?",
+    "answer": "A list is mutable (can change after creation) and uses square brackets. A tuple is immutable (fixed once created) and uses parentheses. Tuples are slightly faster, can be dict keys / set elements (hashable), and signal that data shouldn't change.",
+    "tags": [
+      "data-structures",
+      "python"
+    ]
+  },
+  {
+    "id": "fa4d8b85-3545-4c04-a627-4def0bd0efce",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "How is a Python dict implemented and what is its lookup complexity?",
+    "answer": "A dict is a hash table: keys are hashed to buckets, giving average O(1) insertion, lookup, and deletion. Worst case is O(n) under many hash collisions. Keys must be hashable (immutable). Since Python 3.7 dicts preserve insertion order.",
+    "tags": [
+      "complexity",
+      "data-structures",
+      "python"
+    ]
+  },
+  {
+    "id": "e18fd11f-c589-4df4-b8d9-670c95d866c6",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is the time complexity of common set operations?",
+    "answer": "Sets are hash-based: membership test (`x in s`), add, and remove are average O(1). Union/intersection are roughly O(len) of the sets. Sets are ideal for deduplication and fast membership checks versus O(n) list scans.",
+    "tags": [
+      "complexity",
+      "data-structures"
+    ]
+  },
+  {
+    "id": "7947858e-ac28-4ac8-9cbf-f6f50b793021",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is Big-O notation?",
+    "answer": "Big-O describes how an algorithm's running time or space grows with input size n, focusing on the dominant term and ignoring constants. E.g. O(1) constant, O(log n) logarithmic, O(n) linear, O(n log n), O(n²) quadratic. It characterises worst-case scalability.",
+    "tags": [
+      "complexity"
+    ]
+  },
+  {
+    "id": "9d146418-4606-486b-9b4c-713574d70bd0",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is the difference between an array and a linked list?",
+    "answer": "An array (Python list) stores elements contiguously: O(1) index access, but O(n) insert/delete in the middle (shifting). A linked list stores nodes with pointers: O(1) insert/delete given the node, but O(n) access by index (must traverse). Arrays have better cache locality.",
+    "tags": [
+      "complexity",
+      "data-structures"
+    ]
+  },
+  {
+    "id": "86b89386-db83-4bb3-93d7-cbc05e6848b8",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is the difference between a stack and a queue?",
+    "answer": "A stack is LIFO (last-in, first-out) — push/pop from the same end (e.g. call stack, undo). A queue is FIFO (first-in, first-out) — enqueue at the back, dequeue from the front (e.g. task scheduling). Python: list or deque for stacks; collections.deque for queues.",
+    "tags": [
+      "data-structures"
+    ]
+  },
+  {
+    "id": "1dcf563d-ac80-42ea-b9dd-6d9f4b9210a2",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "How do hash tables handle collisions?",
+    "answer": "When two keys hash to the same bucket, collisions are resolved by chaining (each bucket holds a linked list/array of entries) or open addressing (probe for the next free slot). Good hash functions and a low load factor keep collisions rare, preserving O(1) average operations.",
+    "tags": [
+      "complexity",
+      "data-structures"
+    ]
+  },
+  {
+    "id": "5f777423-2a17-48a2-8a8c-970c34d9f4e6",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "How does binary search work and what is its complexity?",
+    "answer": "Binary search finds a target in a sorted array by repeatedly halving the search range: compare the middle element, then recurse on the left or right half. It runs in O(log n) time. The array must be sorted first.",
+    "tags": [
+      "complexity"
+    ]
+  },
+  {
+    "id": "1d09305a-5fc4-4337-bf0f-ba6548124cd2",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is recursion and why does it need a base case?",
+    "answer": "Recursion is when a function calls itself to solve smaller subproblems. The base case is the condition that stops recursion; without it, the function recurses forever and overflows the call stack. Each call adds a stack frame (O(depth) space).",
+    "tags": [
+      "functions"
+    ]
+  },
+  {
+    "id": "9e81cc82-c9f4-471e-86fc-e5bf54ff66ca",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is the difference between mutable and immutable objects in Python?",
+    "answer": "Mutable objects (list, dict, set) can be changed in place. Immutable objects (int, str, tuple, frozenset) cannot — operations create new objects. Immutability enables hashing and avoids surprising aliasing bugs (e.g. mutable default arguments).",
+    "tags": [
+      "python"
+    ]
+  },
+  {
+    "id": "70e1e29b-e30b-47bf-8134-2dac7092bf73",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is a list comprehension and why use it?",
+    "answer": "A list comprehension builds a list concisely: `[f(x) for x in iterable if cond]`. It is more readable and usually faster than an equivalent for-loop with append, because the iteration is optimised in C internally.",
+    "tags": [
+      "idioms",
+      "python"
+    ]
+  },
+  {
+    "id": "e4de8f43-8c2b-416e-96d7-91c862004b6e",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is a generator and how does `yield` work?",
+    "answer": "A generator is a lazy iterator that produces values one at a time using `yield`, pausing and resuming its state between calls. It uses O(1) memory instead of building a whole list, ideal for large or infinite sequences and streaming data.",
+    "tags": [
+      "idioms",
+      "memory",
+      "python"
+    ]
+  },
+  {
+    "id": "b741100f-c106-43df-a7e9-9a1fc4363ed0",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is a decorator in Python?",
+    "answer": "A decorator is a function that wraps another function to extend its behaviour without modifying it, applied with `@decorator` syntax. It takes a function and returns a new one. Common uses: logging, timing, caching, access control.",
+    "tags": [
+      "functions",
+      "python"
+    ]
+  },
+  {
+    "id": "8a9f19b1-1076-41f9-982d-248e9e9f5d93",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What do *args and **kwargs do?",
+    "answer": "`*args` collects extra positional arguments into a tuple; `**kwargs` collects extra keyword arguments into a dict. They let functions accept a variable number of arguments and forward them to other functions (`f(*args, **kwargs)`).",
+    "tags": [
+      "functions",
+      "python"
+    ]
+  },
+  {
+    "id": "8e4dd64d-8bd9-47f1-8834-b73f0fbd92d1",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is the Global Interpreter Lock (GIL) in CPython?",
+    "answer": "The GIL is a mutex that allows only one thread to execute Python bytecode at a time. It simplifies memory management but prevents true multi-core parallelism for CPU-bound threads. Workarounds: multiprocessing (separate processes), or C extensions/async for I/O-bound work.",
+    "tags": [
+      "concurrency",
+      "python"
+    ]
+  },
+  {
+    "id": "aa8f6eaf-63e4-4c8c-8e42-3186fcce3e8f",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is the difference between a shallow and a deep copy?",
+    "answer": "A shallow copy duplicates the outer object but shares references to nested objects — mutating a nested item affects both. A deep copy (`copy.deepcopy`) recursively duplicates everything, so the copies are fully independent.",
+    "tags": [
+      "memory",
+      "python"
+    ]
+  },
+  {
+    "id": "d746e999-fedc-4a0c-9556-7102ec7e2d45",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is the difference between `is` and `==` in Python?",
+    "answer": "`==` compares values (equality, via __eq__). `is` compares identity (whether two names point to the same object in memory). Use `==` for value checks and `is` only for singletons like `None` (`x is None`).",
+    "tags": [
+      "python"
+    ]
+  },
+  {
+    "id": "30337100-05ba-4be0-aa37-6e04697d91fd",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "How does try/except/else/finally work?",
+    "answer": "`try` runs code that may fail; `except` handles specific exceptions; `else` runs if no exception occurred; `finally` always runs (cleanup, e.g. closing files) whether or not an exception was raised. Catch specific exceptions, not bare `except`.",
+    "tags": [
+      "python"
+    ]
+  },
+  {
+    "id": "661e2e0c-0f8a-4bee-8547-f2181f67fbd4",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is the difference between class and instance attributes?",
+    "answer": "Class attributes are shared across all instances (defined in the class body). Instance attributes are unique per object (usually set in __init__ via self). Mutating a shared mutable class attribute affects every instance — a common bug.",
+    "tags": [
+      "oop",
+      "python"
+    ]
+  },
+  {
+    "id": "82bd047d-5087-4f22-b7f4-c651dcf7f9b2",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is polymorphism / duck typing in Python?",
+    "answer": "Polymorphism lets different types respond to the same interface. Python uses duck typing: 'if it walks like a duck and quacks like a duck, it's a duck' — code works with any object that implements the needed methods, regardless of its class.",
+    "tags": [
+      "oop",
+      "python"
+    ]
+  },
+  {
+    "id": "b866e6d1-83e8-4393-8ae4-c87be5c484c7",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "Why are NumPy arrays faster than Python lists for numerical work?",
+    "answer": "NumPy stores data in contiguous, fixed-type memory and runs vectorised operations in optimised C loops, avoiding Python's per-element overhead and dynamic typing. Operations apply to whole arrays at once, giving large speedups and lower memory use.",
+    "tags": [
+      "complexity",
+      "numpy"
+    ]
+  },
+  {
+    "id": "36529c4d-0ecd-4168-8455-c0a34104905f",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is the difference between a Pandas DataFrame and a Series?",
+    "answer": "A Series is a 1-D labelled array (one column). A DataFrame is a 2-D labelled table — a collection of Series sharing an index. Selecting one column of a DataFrame returns a Series.",
+    "tags": [
+      "data-structures",
+      "pandas"
+    ]
+  },
+  {
+    "id": "732ec048-77d9-4102-b667-13617678c9c3",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is the split-apply-combine pattern in Pandas groupby?",
+    "answer": "`groupby` splits rows into groups by key, applies a function to each group (aggregate/transform/filter), and combines the results. E.g. `df.groupby('city')['sales'].mean()` computes a mean per city. It's the core idiom for grouped analytics.",
+    "tags": [
+      "idioms",
+      "pandas"
+    ]
+  },
+  {
+    "id": "02ab1dec-1ed7-4303-a164-28f8dd959262",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is memoization and how does functools.lru_cache help?",
+    "answer": "Memoization caches a function's results by its arguments so repeated calls return instantly instead of recomputing. `@functools.lru_cache` adds this automatically with a least-recently-used eviction policy — turning, e.g., exponential recursive Fibonacci into linear time.",
+    "tags": [
+      "complexity",
+      "functions"
+    ]
+  },
+  {
+    "id": "f7896e83-fda9-46d3-83db-6632d6f0e8be",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What sorting algorithm does Python use and what is its complexity?",
+    "answer": "Python's `sorted`/`list.sort` use Timsort, a hybrid of merge sort and insertion sort. It is O(n log n) worst case, stable (preserves order of equal elements), and very fast on partially-ordered real-world data (near O(n) on already-sorted input).",
+    "tags": [
+      "complexity"
+    ]
+  },
+  {
+    "id": "3ac987a5-f8e5-423b-9ff1-979c1ec08756",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is dynamic programming?",
+    "answer": "Dynamic programming solves problems by breaking them into overlapping subproblems and storing subproblem solutions (memoization top-down, or tabulation bottom-up) to avoid recomputation. Applicable when a problem has optimal substructure, e.g. knapsack, edit distance, Fibonacci.",
+    "tags": [
+      "complexity",
+      "functions"
+    ]
+  },
+  {
+    "id": "6d0314d0-1444-4b9a-8d5e-c23c3a89e356",
+    "subject": "Programming",
+    "source": "GEN-PY",
+    "question": "What is a context manager and the `with` statement?",
+    "answer": "A context manager defines setup and teardown via __enter__ and __exit__, used with `with`. It guarantees cleanup (closing files, releasing locks) even if an exception occurs: `with open(f) as fh:` closes the file automatically on exit.",
+    "tags": [
+      "idioms",
+      "python"
+    ]
+  },
+  {
+    "id": "b0ecfb87-f48e-4ea3-9093-c02adc397f82",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is the difference between an INNER JOIN and a LEFT JOIN?",
+    "answer": "INNER JOIN returns only rows with a match in both tables. LEFT (OUTER) JOIN returns all rows from the left table plus matching right rows, with NULLs where there is no match. Use LEFT JOIN to keep unmatched left-side records.",
+    "tags": [
+      "joins"
+    ]
+  },
+  {
+    "id": "8be21e61-52da-4925-9dba-e3d4d05ac015",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is the difference between WHERE and HAVING?",
+    "answer": "WHERE filters individual rows before grouping. HAVING filters groups after GROUP BY and can use aggregate functions (e.g. HAVING COUNT(*) > 5). WHERE cannot reference aggregates.",
+    "tags": [
+      "aggregation"
+    ]
+  },
+  {
+    "id": "0e86b6da-c7b3-478c-85fb-f810bdb04e78",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "How does GROUP BY work with aggregate functions?",
+    "answer": "GROUP BY collapses rows sharing the same key values into one row per group, and aggregate functions (COUNT, SUM, AVG, MIN, MAX) compute a value per group. Non-aggregated columns in SELECT must appear in GROUP BY.",
+    "tags": [
+      "aggregation"
+    ]
+  },
+  {
+    "id": "abb263a9-9040-4a7c-ab23-588c344d1ae7",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What are window functions and how do they differ from GROUP BY?",
+    "answer": "Window functions compute across a set of rows related to the current row (defined by OVER(PARTITION BY ... ORDER BY ...)) without collapsing them — each row keeps its identity. GROUP BY reduces rows to one per group; windows add a computed column while preserving all rows.",
+    "tags": [
+      "window-functions"
+    ]
+  },
+  {
+    "id": "87930f86-0b5e-4ec0-b6a8-855042884c16",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is the difference between ROW_NUMBER, RANK, and DENSE_RANK?",
+    "answer": "All assign positions within a partition ordered by some column. ROW_NUMBER: unique sequential numbers (no ties). RANK: ties share a rank and the next rank skips (1,1,3). DENSE_RANK: ties share a rank with no gaps (1,1,2).",
+    "tags": [
+      "window-functions"
+    ]
+  },
+  {
+    "id": "ba7dccca-b371-4325-bd6d-416759e3db15",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "How do indexes speed up queries, and what is the cost?",
+    "answer": "An index (usually a B-tree) lets the database find rows by a key in O(log n) instead of scanning the whole table O(n). Cost: extra storage and slower writes (INSERT/UPDATE/DELETE must maintain the index). Index columns used in WHERE/JOIN/ORDER BY.",
+    "tags": [
+      "indexing",
+      "query-optimisation"
+    ]
+  },
+  {
+    "id": "7b7580be-eea8-4d41-b307-4fe41de783e7",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is the difference between a clustered and a non-clustered index?",
+    "answer": "A clustered index determines the physical row order of the table (only one per table); the leaf nodes are the data rows. A non-clustered index is a separate structure with pointers to the rows (many allowed). Clustered lookups avoid an extra lookup step.",
+    "tags": [
+      "indexing"
+    ]
+  },
+  {
+    "id": "0aa20676-3b54-4616-884f-ded84bb2d2e0",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "How do you investigate and improve a slow query?",
+    "answer": "Use EXPLAIN / EXPLAIN ANALYZE to see the query plan. Look for full table scans, missing indexes, and expensive joins/sorts. Fixes: add indexes on filter/join columns, avoid SELECT *, filter early, rewrite correlated subqueries as joins, and update table statistics.",
+    "tags": [
+      "query-optimisation"
+    ]
+  },
+  {
+    "id": "d1671c08-b4b1-42de-8aa4-ea445a656399",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is database normalisation (1NF, 2NF, 3NF)?",
+    "answer": "Normalisation organises tables to reduce redundancy. 1NF: atomic values, no repeating groups. 2NF: 1NF plus no partial dependency on part of a composite key. 3NF: 2NF plus no transitive dependency (non-key columns depend only on the key). It prevents update anomalies.",
+    "tags": [
+      "normalisation",
+      "schema-design"
+    ]
+  },
+  {
+    "id": "a543ba0c-3029-4aa9-ae6d-1fe85708d957",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "Why and when would you denormalise a database?",
+    "answer": "Denormalisation deliberately adds redundancy (duplicated columns, precomputed aggregates) to speed up reads by avoiding joins. Used in read-heavy / analytics (OLAP) systems. Tradeoff: faster reads but more storage and harder, error-prone writes.",
+    "tags": [
+      "normalisation",
+      "schema-design"
+    ]
+  },
+  {
+    "id": "f397a8ff-5f0b-4891-91d9-c1fc0ba55c60",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is the difference between a primary key and a foreign key?",
+    "answer": "A primary key uniquely identifies each row in a table (unique, non-null). A foreign key is a column referencing a primary key in another table, enforcing referential integrity — you can't reference a row that doesn't exist.",
+    "tags": [
+      "schema-design"
+    ]
+  },
+  {
+    "id": "3bd99537-d25e-409d-9f6d-10cbc881e30f",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What are the ACID properties of a transaction?",
+    "answer": "Atomicity (all-or-nothing), Consistency (valid state to valid state, constraints hold), Isolation (concurrent transactions don't interfere), Durability (committed changes survive crashes). ACID guarantees reliable transaction processing.",
+    "tags": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "a469d883-c4c8-44e1-9a4a-3c10a141cf2d",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What are transaction isolation levels?",
+    "answer": "They trade consistency for concurrency: Read Uncommitted (dirty reads possible), Read Committed (no dirty reads), Repeatable Read (no non-repeatable reads), Serializable (full isolation, prevents phantoms). Higher levels reduce anomalies but lower concurrency.",
+    "tags": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "becd78ee-ed55-4327-8cc7-a66479aeb08f",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is the difference between OLTP and OLAP?",
+    "answer": "OLTP (Online Transaction Processing): many short read/write transactions, normalised schema, row-oriented (e.g. order systems). OLAP (Online Analytical Processing): complex read-heavy aggregate queries over large data, denormalised/star schema, often column-oriented (e.g. data warehouses).",
+    "tags": [
+      "schema-design"
+    ]
+  },
+  {
+    "id": "d469d920-2a0d-4ae4-a498-483696a75803",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is the difference between a subquery and a CTE?",
+    "answer": "Both produce intermediate result sets. A subquery is nested inside another query. A CTE (Common Table Expression, `WITH name AS (...)`) is a named, readable block referenced later, can be used multiple times, and supports recursion. CTEs improve readability of complex queries.",
+    "tags": [
+      "query-optimisation"
+    ]
+  },
+  {
+    "id": "b826e53c-574b-42c7-98d3-7297a7493120",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is the difference between UNION and UNION ALL?",
+    "answer": "Both stack result sets with matching columns. UNION removes duplicate rows (requires a sort/hash, slower). UNION ALL keeps all rows including duplicates (faster). Use UNION ALL when you know there are no duplicates or want to keep them.",
+    "tags": [
+      "aggregation"
+    ]
+  },
+  {
+    "id": "17f9bf12-24c0-4bd5-85d8-8eaf7f263ebc",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "How does SQL handle NULL values in comparisons?",
+    "answer": "NULL means 'unknown'. Comparisons with NULL yield UNKNOWN, not true/false — so `= NULL` never matches; use `IS NULL` / `IS NOT NULL`. Aggregates like COUNT(col) skip NULLs, and NULLs can drop rows unexpectedly in WHERE and JOIN conditions.",
+    "tags": [
+      "query-optimisation"
+    ]
+  },
+  {
+    "id": "8067bff1-9a32-4a10-99aa-4ac363319155",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What does DISTINCT do and what is its cost?",
+    "answer": "DISTINCT removes duplicate rows from a result set, requiring a sort or hash to identify duplicates — which can be expensive on large results. Prefer filtering or proper joins over DISTINCT used to mask duplicate-row bugs.",
+    "tags": [
+      "aggregation",
+      "query-optimisation"
+    ]
+  },
+  {
+    "id": "dd040d25-e7c2-4337-8110-6b1ca7cfca0a",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is a composite index and the leftmost-prefix rule?",
+    "answer": "A composite index covers multiple columns in order, e.g. (a, b, c). It can serve queries filtering on a leading prefix — (a), (a,b), or (a,b,c) — but not on (b) or (c) alone. Column order should match common query patterns.",
+    "tags": [
+      "indexing",
+      "query-optimisation"
+    ]
+  },
+  {
+    "id": "b8566f96-eceb-4362-9035-b89313b4387d",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is a deadlock and how is it resolved?",
+    "answer": "A deadlock occurs when two transactions each hold a lock the other needs, so neither can proceed. The database detects the cycle and aborts one transaction (the victim), which is rolled back and can be retried. Consistent lock ordering reduces deadlocks.",
+    "tags": [
+      "transactions"
+    ]
+  },
+  {
+    "id": "6fe360e9-432e-447c-aba8-7828c44062b3",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is a self join and when is it useful?",
+    "answer": "A self join joins a table to itself using table aliases. Useful for hierarchical/relationship data within one table, e.g. matching employees to their managers (employee.manager_id = manager.id) or comparing rows to other rows in the same table.",
+    "tags": [
+      "joins"
+    ]
+  },
+  {
+    "id": "debe1b6a-8efe-4dc0-9456-21520a57425c",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "How can sharding and partitioning scale a database?",
+    "answer": "Partitioning splits one table into segments (by range/hash/list) within a database to improve query and maintenance performance. Sharding distributes data across multiple database servers (horizontal scaling) to spread load and storage. Both reduce the data scanned per query.",
+    "tags": [
+      "query-optimisation",
+      "schema-design"
+    ]
+  },
+  {
+    "id": "d67dea64-ab11-4328-af23-69a28c14486d",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "What is the difference between the GROUP BY logical order and SELECT?",
+    "answer": "SQL logical execution order is: FROM/JOIN → WHERE → GROUP BY → HAVING → SELECT → ORDER BY → LIMIT. This explains why column aliases defined in SELECT can't be used in WHERE/GROUP BY (evaluated earlier) but can be in ORDER BY (evaluated later).",
+    "tags": [
+      "aggregation",
+      "query-optimisation"
+    ]
+  },
+  {
+    "id": "327c02f5-3614-4630-a834-463745dd7a5b",
+    "subject": "SQL & Databases",
+    "source": "GEN-SQL",
+    "question": "When can a JOIN outperform a correlated subquery?",
+    "answer": "A correlated subquery re-executes once per outer row (O(n·m)), which can be slow. Rewriting it as a JOIN lets the optimiser use set-based operations and indexes, often turning it into a single efficient pass. Many optimisers do this automatically, but not always.",
+    "tags": [
+      "joins",
+      "query-optimisation"
+    ]
+  },
+  {
+    "id": "c55c953f-bbc1-4538-b8a9-54ae33edff5d",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What is a feature store and why use one?",
+    "answer": "A feature store is a central system for defining, storing, and serving ML features. It provides consistency between training and serving (the same feature logic both places), reuse across teams/models, point-in-time correctness, and low-latency online lookups.",
+    "tags": [
+      "data-pipelines",
+      "feature-store"
+    ]
+  },
+  {
+    "id": "fe6ec607-d222-4c96-ae14-b33b936e4c5e",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What is a model registry?",
+    "answer": "A model registry is a versioned catalogue of trained models with metadata (metrics, lineage, stage: staging/production/archived). It enables reproducibility, controlled promotion/rollback, and audit — the source of truth for which model version is deployed.",
+    "tags": [
+      "ci-cd",
+      "deployment"
+    ]
+  },
+  {
+    "id": "f2a544f5-0b16-4439-b84b-b0c61b8b4475",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What is the difference between batch and online (real-time) inference?",
+    "answer": "Batch inference scores large datasets on a schedule, writing predictions to a store (high throughput, latency-tolerant). Online inference serves predictions on demand via an API with low latency (e.g. < 100 ms). Choice depends on freshness needs and traffic patterns.",
+    "tags": [
+      "deployment",
+      "serving"
+    ]
+  },
+  {
+    "id": "f37ec170-a582-48c7-8eb3-1744e4abc543",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What are common model serving patterns?",
+    "answer": "Serve via a REST/gRPC microservice (model-as-a-service, independently scalable), embed the model in the application (low latency, harder to update), or batch-score offline. Dedicated servers (TF Serving, TorchServe, Triton) add batching, versioning, and GPU support.",
+    "tags": [
+      "deployment",
+      "serving"
+    ]
+  },
+  {
+    "id": "a3221c36-50e7-46a7-9747-51c7f59bf8dc",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What is shadow deployment?",
+    "answer": "In shadow (mirror) deployment, a new model receives a copy of live traffic and makes predictions, but its outputs are not served to users — only logged. This validates performance and stability on real data with zero user risk before a real rollout.",
+    "tags": [
+      "deployment"
+    ]
+  },
+  {
+    "id": "508d0721-5c30-41e6-8778-47ea8beb9c06",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What is canary deployment?",
+    "answer": "A canary deployment routes a small percentage of traffic to the new version while most stays on the old one. You monitor metrics; if healthy, gradually increase traffic, otherwise roll back. It limits the blast radius of a bad release.",
+    "tags": [
+      "deployment",
+      "reliability"
+    ]
+  },
+  {
+    "id": "acd3a568-2ef2-490c-8aef-4d69a04bd599",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What is blue-green deployment?",
+    "answer": "Two identical environments: blue (current) and green (new). Deploy and test on green, then switch all traffic from blue to green at once. Rollback is instant (switch back to blue). Costs double infrastructure during the switch.",
+    "tags": [
+      "deployment",
+      "reliability"
+    ]
+  },
+  {
+    "id": "2b0068a3-b95e-4aca-b889-25c432553f7e",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "How do you A/B test a model in production?",
+    "answer": "Randomly split traffic between the current model (control) and the candidate (treatment), then compare a business metric (e.g. conversion, click-through) with statistical testing. Unlike offline metrics, this measures real-world impact. Ensure adequate sample size and runtime.",
+    "tags": [
+      "deployment",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "32a95039-bf91-46d5-aaa4-9fe1c045b8e6",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What should you monitor for a model in production?",
+    "answer": "Operational metrics (latency, throughput, error rate, resource use), data quality (schema, missing values, ranges), input/output distribution drift, and — when labels arrive — predictive performance. Also business KPIs. Alert on degradation.",
+    "tags": [
+      "monitoring",
+      "reliability"
+    ]
+  },
+  {
+    "id": "4add80b2-edf0-42f2-8ff6-57a23ef08d37",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "How is data drift detected in production?",
+    "answer": "Compare the live feature distribution to a training/reference baseline using statistical measures: Population Stability Index (PSI), Kolmogorov–Smirnov test (continuous), or chi-square (categorical). Crossing a threshold triggers an alert and possible retraining.",
+    "tags": [
+      "data-pipelines",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "01045193-f9cd-42f4-83a7-66b12349c612",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What does CI/CD look like for ML pipelines?",
+    "answer": "Beyond code CI/CD, ML adds: automated data validation, model training/evaluation in the pipeline, gating on metric thresholds, model versioning, and automated (or approval-gated) deployment. 'Continuous training' retrains as new data arrives. Tools: pipelines in Kubeflow, Airflow, GitHub Actions.",
+    "tags": [
+      "ci-cd",
+      "data-pipelines"
+    ]
+  },
+  {
+    "id": "fd164bb5-eabb-4b4b-a4b2-dbba0a4ea5dc",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "How do you make an ML system reproducible?",
+    "answer": "Version everything: code (git), data (snapshots/DVC), model artefacts (registry), environment (Docker, pinned dependencies), and hyperparameters/config. Fix random seeds and log run metadata. Reproducibility lets you debug, audit, and reliably retrain.",
+    "tags": [
+      "ci-cd",
+      "reliability"
+    ]
+  },
+  {
+    "id": "5453bc8d-8a96-400d-89e7-afb661d8ce72",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What is the difference between horizontal and vertical scaling?",
+    "answer": "Vertical scaling (scale up) adds more power (CPU/RAM) to one machine — simple but capped and a single point of failure. Horizontal scaling (scale out) adds more machines behind a load balancer — near-unlimited and fault-tolerant, but needs statelessness and coordination.",
+    "tags": [
+      "scalability"
+    ]
+  },
+  {
+    "id": "9ec22e17-d7da-4dac-b8cb-0ec5253cb910",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What does a load balancer do?",
+    "answer": "A load balancer distributes incoming requests across multiple server instances to spread load, improve throughput, and provide failover (routing around unhealthy instances). Strategies include round-robin, least-connections, and consistent hashing.",
+    "tags": [
+      "reliability",
+      "scalability"
+    ]
+  },
+  {
+    "id": "83cfb304-a32f-4719-907d-e3654dd0ca93",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "Why and where is caching used in ML systems?",
+    "answer": "Caching stores expensive-to-compute results (feature lookups, model predictions for repeated inputs, embeddings) in fast storage (in-memory like Redis) to cut latency and load. Tradeoffs: staleness and cache invalidation. Effective when inputs repeat.",
+    "tags": [
+      "caching",
+      "scalability"
+    ]
+  },
+  {
+    "id": "a6485aed-bc6f-4667-a862-6e259d7b1d81",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What is the difference between latency and throughput?",
+    "answer": "Latency is the time to handle a single request (e.g. 50 ms). Throughput is how many requests are handled per unit time (e.g. 1000 req/s). Batching can raise throughput at the cost of per-request latency. Optimise for whichever your use case demands.",
+    "tags": [
+      "scalability"
+    ]
+  },
+  {
+    "id": "c12c1d84-397a-4bd2-9703-4db8501ac237",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What is idempotency and why does it matter in pipelines?",
+    "answer": "An idempotent operation produces the same result whether run once or many times. It matters because retries (after failures/timeouts) are common in distributed systems; idempotent writes prevent duplicate side effects (e.g. double-charging, duplicate rows).",
+    "tags": [
+      "data-pipelines",
+      "reliability"
+    ]
+  },
+  {
+    "id": "76270e39-dad9-4af4-8cb4-a355564880fc",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "Why use a message queue / asynchronous processing?",
+    "answer": "A message queue (e.g. Kafka, RabbitMQ, SQS) decouples producers from consumers, buffering work so spikes don't overwhelm downstream services. It enables async processing, retries, and horizontal scaling of consumers, improving resilience and throughput.",
+    "tags": [
+      "data-pipelines",
+      "scalability"
+    ]
+  },
+  {
+    "id": "0088275f-5702-4749-b6ec-0bf95f7d2c50",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "Why containerise ML applications with Docker?",
+    "answer": "A container packages code, dependencies, and runtime into a portable, reproducible image that runs identically across environments — eliminating 'works on my machine' issues. It isolates dependencies (e.g. CUDA, library versions) and is the unit of deployment for orchestration.",
+    "tags": [
+      "deployment",
+      "reliability"
+    ]
+  },
+  {
+    "id": "b29d1f03-d869-4004-ae7a-d17d3e751b20",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What do workflow orchestrators like Airflow or Kubeflow do?",
+    "answer": "They schedule and manage multi-step pipelines as DAGs (directed acyclic graphs), handling task dependencies, retries, scheduling, parallelism, and monitoring. In ML they orchestrate data ingestion → preprocessing → training → evaluation → deployment.",
+    "tags": [
+      "ci-cd",
+      "data-pipelines"
+    ]
+  },
+  {
+    "id": "4dc53973-0a8a-4807-b4cd-92dac914dc9e",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "Why is model versioning and rollback important?",
+    "answer": "Storing every deployed model version lets you instantly roll back when a new model underperforms or breaks, reproduce past predictions, and audit decisions. Pair it with traffic-shifting (canary/blue-green) so rollback is fast and low-risk.",
+    "tags": [
+      "deployment",
+      "reliability"
+    ]
+  },
+  {
+    "id": "d24b6164-888f-40aa-ad94-d5389ed03543",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What is training-serving skew and how do you prevent it?",
+    "answer": "Training-serving skew is when feature computation differs between training and production, degrading live performance. Prevent it by sharing feature code/logic (e.g. a feature store), using the same preprocessing pipeline in both, and monitoring live vs training distributions.",
+    "tags": [
+      "feature-store",
+      "monitoring"
+    ]
+  },
+  {
+    "id": "39f3f914-e562-4453-aeff-8abe858ff368",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What are SLAs, SLOs, and SLIs?",
+    "answer": "An SLI (indicator) is a measured metric (e.g. p99 latency). An SLO (objective) is the internal target for an SLI (e.g. p99 < 200 ms 99.9% of the time). An SLA (agreement) is the external, often contractual promise with consequences. They define and enforce reliability.",
+    "tags": [
+      "monitoring",
+      "reliability"
+    ]
+  },
+  {
+    "id": "75608bb0-f116-451c-b515-90f110dd3ee5",
+    "subject": "MLOps & Systems",
+    "source": "GEN-OPS",
+    "question": "What is the cold start problem in ML systems?",
+    "answer": "Cold start is poor performance when there's little data for a new user, item, or freshly deployed service. Mitigations: fall back to popularity/heuristics, use content-based features, transfer learning, or onboarding prompts until enough interaction data accumulates.",
+    "tags": [
+      "reliability",
+      "serving"
     ]
   }
 ];

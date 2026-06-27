@@ -10,6 +10,7 @@
   let revealed = false;
   let totalThisSession = 0;
   let counts = { seen: 0, again: 0, hard: 0, good: 0 };
+  let activeSubject = null;
   let activeTag = null;
 
   // ---- element refs ----
@@ -23,8 +24,9 @@
   // ---------- HOME ----------
   function renderHome() {
     progress = SRS.loadProgress();
+    const subject = activeSubject;
     const tag = activeTag;
-    const stats = SRS.getStats(cards, progress, tag);
+    const stats = SRS.getStats(cards, progress, subject, tag);
     const seenToday = SRS.newCardsSeenToday(progress);
 
     $("statsGrid").innerHTML = [
@@ -35,14 +37,21 @@
     ].join("");
 
     const limit = clampLimit($("newLimit").value);
-    const due = SRS.getDueCards(cards, progress, tag, limit);
-    const scope = tag ? `“${tag}”` : "all topics";
+    const due = SRS.getDueCards(cards, progress, subject, tag, limit);
+    const scope = scopeLabel(subject, tag);
     $("dueHint").textContent = due.length
       ? `${due.length} card${due.length === 1 ? "" : "s"} ready in ${scope}.`
       : `Nothing due in ${scope} right now — come back later.`;
 
     $("deckMeta").textContent =
-      `${cards.length} cards · ${Object.keys(SRS.allTags(cards)).length} topics · ${seenToday} new seen today`;
+      `${cards.length} cards · ${Object.keys(SRS.allSubjects(cards)).length} subjects · ${seenToday} new seen today`;
+  }
+
+  function scopeLabel(subject, tag) {
+    if (subject && tag) return `${subject} › ${tag}`;
+    if (subject) return subject;
+    if (tag) return `“${tag}”`;
+    return "all subjects";
   }
 
   function statCard(value, label, kind) {
@@ -52,9 +61,19 @@
     </div>`;
   }
 
+  function buildSubjectSelect() {
+    const subjectCounts = SRS.allSubjects(cards);
+    const opts = [`<option value="">All subjects (${cards.length})</option>`];
+    for (const [subject, n] of Object.entries(subjectCounts)) {
+      opts.push(`<option value="${subject}">${subject} (${n})</option>`);
+    }
+    $("subjectSelect").innerHTML = opts.join("");
+  }
+
   function buildTagSelect() {
-    const tagCounts = SRS.allTags(cards);
-    const opts = [`<option value="">All topics (${cards.length})</option>`];
+    const tagCounts = SRS.allTags(cards, activeSubject);
+    const scopeCount = SRS.filterBySubject(cards, activeSubject).length;
+    const opts = [`<option value="">All topics (${scopeCount})</option>`];
     for (const [tag, n] of Object.entries(tagCounts)) {
       opts.push(`<option value="${tag}">${tag} (${n})</option>`);
     }
@@ -71,10 +90,11 @@
   // ---------- SESSION ----------
   function startSession() {
     progress = SRS.loadProgress();
+    activeSubject = $("subjectSelect").value || null;
     activeTag = $("tagSelect").value || null;
     const limit = clampLimit($("newLimit").value);
 
-    let due = SRS.getDueCards(cards, progress, activeTag, limit);
+    let due = SRS.getDueCards(cards, progress, activeSubject, activeTag, limit);
     if (!due.length) {
       renderHome();
       flashDueHint();
@@ -86,7 +106,7 @@
     totalThisSession = due.length;
     counts = { seen: 0, again: 0, hard: 0, good: 0 };
 
-    $("scopePill").textContent = activeTag ? activeTag : "all topics";
+    $("scopePill").textContent = scopeLabel(activeSubject, activeTag);
     showView("review");
     nextCard();
   }
@@ -180,6 +200,12 @@
   $("revealBtn").addEventListener("click", reveal);
   $("exitBtn").addEventListener("click", () => { renderHome(); showView("home"); });
   $("homeBtn").addEventListener("click", () => { renderHome(); showView("home"); });
+  $("subjectSelect").addEventListener("change", (e) => {
+    activeSubject = e.target.value || null;
+    activeTag = null;
+    buildTagSelect();        // tags re-scope to the chosen subject
+    renderHome();
+  });
   $("tagSelect").addEventListener("change", (e) => { activeTag = e.target.value || null; renderHome(); });
   $("newLimit").addEventListener("input", renderHome);
 
@@ -221,6 +247,7 @@
   };
 
   // ---------- init ----------
+  buildSubjectSelect();
   buildTagSelect();
   renderHome();
   showView("home");

@@ -35,6 +35,15 @@ const SRS = (() => {
     return cards.filter((c) => (c.tags || []).includes(tag));
   }
 
+  function filterBySubject(cards, subject) {
+    if (!subject) return cards;
+    return cards.filter((c) => c.subject === subject);
+  }
+
+  function scoped(cards, subject, tag) {
+    return filterByTag(filterBySubject(cards, subject), tag);
+  }
+
   function newCardsSeenToday(progress, now = new Date()) {
     const today = dayKey(now);
     let count = 0;
@@ -44,14 +53,13 @@ const SRS = (() => {
     return count;
   }
 
-  function getDueCards(cards, progress, tag = null, newLimit = DEFAULT_NEW_PER_DAY) {
+  function getDueCards(cards, progress, subject = null, tag = null, newLimit = DEFAULT_NEW_PER_DAY) {
     const now = new Date();
     const remainingNew = Math.max(0, newLimit - newCardsSeenToday(progress, now));
 
-    const scoped = filterByTag(cards, tag);
     const scheduled = [];
     const fresh = [];
-    for (const card of scoped) {
+    for (const card of scoped(cards, subject, tag)) {
       const state = progress[card.id];
       if (!state) {
         fresh.push(card);
@@ -101,10 +109,10 @@ const SRS = (() => {
     progress[cardId] = state;
   }
 
-  function getStats(cards, progress, tag = null) {
+  function getStats(cards, progress, subject = null, tag = null) {
     const counts = { new: 0, due: 0, bucket_0: 0, bucket_1: 0, bucket_2: 0 };
     const now = new Date();
-    for (const card of filterByTag(cards, tag)) {
+    for (const card of scoped(cards, subject, tag)) {
       const state = progress[card.id];
       if (!state) {
         counts.new++;
@@ -138,10 +146,21 @@ const SRS = (() => {
     return merged;
   }
 
-  function allTags(cards) {
+  function allTags(cards, subject = null) {
+    const counts = {};
+    for (const card of filterBySubject(cards, subject)) {
+      for (const tag of card.tags || []) counts[tag] = (counts[tag] || 0) + 1;
+    }
+    return Object.fromEntries(
+      Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    );
+  }
+
+  function allSubjects(cards) {
     const counts = {};
     for (const card of cards) {
-      for (const tag of card.tags || []) counts[tag] = (counts[tag] || 0) + 1;
+      const s = card.subject || "Machine Learning";
+      counts[s] = (counts[s] || 0) + 1;
     }
     return Object.fromEntries(
       Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
@@ -151,7 +170,7 @@ const SRS = (() => {
   return {
     DEFAULT_NEW_PER_DAY,
     loadProgress, saveProgress, resetProgress,
-    filterByTag, newCardsSeenToday, getDueCards,
-    updateProgress, getStats, allTags, mergeProgress,
+    filterByTag, filterBySubject, newCardsSeenToday, getDueCards,
+    updateProgress, getStats, allTags, allSubjects, mergeProgress,
   };
 })();

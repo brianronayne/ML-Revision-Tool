@@ -73,3 +73,19 @@ def show_tags(tag_counts: dict) -> None:
 def show_unknown_tag(tag: str, available: dict) -> None:
     console.print(f"[red]No cards tagged '{tag}'.[/red]")
     console.print(f"[dim]Available tags:[/dim] {', '.join(available)}")
+
+
+def show_subjects(subject_counts: dict) -> None:
+    console.rule("[bold]Subjects[/bold]")
+    table = Table(box=box.SIMPLE)
+    table.add_column("Subject", style="cyan")
+    table.add_column("Cards", justify="right")
+    for subject, count in subject_counts.items():
+        table.add_row(subject, str(count))
+    console.print(table)
+    console.print("[dim]Filter with:[/dim] python src/main.py review --subject \"<name>\"")
+
+
+def show_unknown_subject(subject: str, available: dict) -> None:
+    console.print(f"[red]No subject '{subject}'.[/red]")
+    console.print(f"[dim]Available subjects:[/dim] {', '.join(available)}")

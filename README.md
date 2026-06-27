@@ -1,14 +1,15 @@
 # ML Revision Tool
 
-A flashcard app for revising machine-learning concepts, with a built-in
-spaced-repetition scheduler. The deck of **129 cards** was authored from three
-textbooks (see [Source material](#source-material)). It runs two ways:
+A flashcard app for revising technical concepts, with a built-in
+spaced-repetition scheduler. The deck of **234 cards** spans five subjects —
+Machine Learning, Data Science, Programming, SQL & Databases, and MLOps &
+Systems (see [Source material](#source-material)). It runs two ways:
 
 - **Web app** — a dark, modern single-page UI you can deploy anywhere (see [Web app](#web-app)).
 - **Terminal CLI** — a Rich-powered command-line reviewer (see [Usage](#usage)).
 
-Both share the same deck and the same 3-bucket spaced-repetition rules. No
-account, no server, no API calls.
+Both share the same deck and the same 3-bucket spaced-repetition rules. Filter by
+subject and topic. No account needed (optional cloud login for cross-device sync).
 
 ## Setup
 
@@ -102,7 +103,8 @@ Run from the project root:
 ```bash
 python src/main.py review        # review everything due (default command)
 python src/main.py stats         # show deck progress
-python src/main.py tags          # list all topics and card counts
+python src/main.py subjects      # list subjects and card counts
+python src/main.py tags          # list topics and card counts
 ```
 
 ### Reviewing
@@ -120,19 +122,20 @@ the **answer**. Rate how well you knew it:
 | `2` | **Hard**  | Due again in 1 day |
 | `3` | **Good**  | Promoted; interval grows (1 day → 4 days → doubling) |
 
-### Focusing on a topic
+### Focusing on a subject or topic
 
-Filter any review or stats view by tag:
+Filter any review or stats view by `--subject` and/or `--tag`:
 
 ```bash
-python src/main.py review --tag transformers
-python src/main.py stats  --tag svm
+python src/main.py review --subject "Data Science"
+python src/main.py review --subject "SQL & Databases" --tag joins
+python src/main.py stats  --subject Programming
+python src/main.py tags   --subject "MLOps & Systems"   # topics within a subject
 ```
 
-Run `python src/main.py tags` to see the full list. Current tags include:
-`transformers`, `llm`, `nlp`, `neural-nets`, `cnn`, `rnn`, `evaluation`,
-`ensemble`, `regularisation`, `optimisation`, `feature-engineering`, `mlops`,
-`trees`, `svm`, `knn`, `linear-models`, `supervised`, `unsupervised`.
+Subjects: `Machine Learning`, `Data Science`, `Programming`, `SQL & Databases`,
+`MLOps & Systems`. Run `python src/main.py subjects` for counts, and
+`python src/main.py tags --subject "<name>"` to see that subject's topics.
 
 ### Daily new-card limit
 
@@ -170,6 +173,7 @@ data/progress.json   # your personal progress (gitignored)
 ```json
 {
   "id": "uuid4",
+  "subject": "Machine Learning",
   "source": "REF-8C1B",
   "question": "What is multi-head attention and why is it used?",
   "answer": "...",
@@ -193,8 +197,8 @@ data/progress.json   # your personal progress (gitignored)
 
 ```
 src/
-  main.py            # CLI entry point (argparse: review / stats / tags)
-  srs.py             # scheduling: due cards, progress updates, stats, tags
+  main.py            # CLI entry point (review / stats / tags / subjects)
+  srs.py             # scheduling: due cards, progress, stats, subjects, tags
   display.py         # Rich-based terminal rendering
 web/
   index.html         # single-page web app
@@ -214,13 +218,11 @@ scripts/
 
 ## Source material
 
-Each card's `source` is an opaque code (e.g. `REF-8C1B`) rather than a title, so
-the underlying references are not exposed publicly. The deck draws on three
-reference works:
+Each card's `source` is an opaque code rather than a title, so the underlying
+references aren't exposed publicly. There are two kinds:
 
-- `REF-2BE2` — 38 cards
-- `REF-F9BD` — 40 cards
-- `REF-8C1B` — 51 cards
-
-The mapping from codes to real titles is kept privately in
-`source_map.private.json` (gitignored) and is not part of this repository.
+- **`REF-…`** — the Machine Learning cards, drawn from three reference works
+  (`REF-2BE2`, `REF-F9BD`, `REF-8C1B`). The code→title mapping is kept privately
+  in `source_map.private.json` (gitignored), not part of this repository.
+- **`GEN-…`** — the Data Science, Programming, SQL, and MLOps cards, authored
+  from general domain knowledge of well-established fundamentals.

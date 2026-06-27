@@ -25,6 +25,16 @@ def filter_by_tag(cards: list[dict], tag: str | None) -> list[dict]:
     return [c for c in cards if tag in c.get("tags", [])]
 
 
+def filter_by_subject(cards: list[dict], subject: str | None) -> list[dict]:
+    if not subject:
+        return cards
+    return [c for c in cards if c.get("subject", "Machine Learning") == subject]
+
+
+def _scoped(cards: list[dict], subject: str | None, tag: str | None) -> list[dict]:
+    return filter_by_tag(filter_by_subject(cards, subject), tag)
+
+
 def new_cards_seen_today(progress: dict, now: datetime | None = None) -> int:
     """Count cards whose first review happened on today's calendar date.
 
@@ -43,6 +53,7 @@ def new_cards_seen_today(progress: dict, now: datetime | None = None) -> int:
 def get_due_cards(
     cards: list[dict],
     progress: dict,
+    subject: str | None = None,
     tag: str | None = None,
     new_limit: int = NEW_CARDS_PER_DAY,
 ) -> list[dict]:
@@ -51,7 +62,7 @@ def get_due_cards(
     now = datetime.now()
     remaining_new = max(0, new_limit - new_cards_seen_today(progress, now))
 
-    cards = filter_by_tag(cards, tag)
+    cards = _scoped(cards, subject, tag)
     scheduled = []
     new_cards = []
     for card in cards:
@@ -98,18 +109,27 @@ def update_progress(progress: dict, card_id: str, rating: int) -> None:
     progress[card_id] = state
 
 
-def all_tags(cards: list[dict]) -> dict[str, int]:
+def all_tags(cards: list[dict], subject: str | None = None) -> dict[str, int]:
     counts: dict[str, int] = {}
-    for card in cards:
+    for card in filter_by_subject(cards, subject):
         for tag in card.get("tags", []):
             counts[tag] = counts.get(tag, 0) + 1
     return dict(sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])))
 
 
-def get_stats(cards: list[dict], progress: dict, tag: str | None = None) -> dict:
+def all_subjects(cards: list[dict]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for card in cards:
+        s = card.get("subject", "Machine Learning")
+        counts[s] = counts.get(s, 0) + 1
+    return dict(sorted(counts.items(), key=lambda kv: (-kv[1], kv[0])))
+
+
+def get_stats(cards: list[dict], progress: dict, subject: str | None = None,
+              tag: str | None = None) -> dict:
     counts = {"new": 0, "due": 0, "bucket_0": 0, "bucket_1": 0, "bucket_2": 0}
     now = datetime.now()
-    cards = filter_by_tag(cards, tag)
+    cards = _scoped(cards, subject, tag)
     for card in cards:
         state = progress.get(card["id"])
         if state is None:
