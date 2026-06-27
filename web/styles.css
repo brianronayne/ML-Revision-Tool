@@ -327,6 +327,81 @@ select:focus, .num-input:focus { border-color: var(--accent); }
   padding: 18px;
 }
 
+/* ---------- auth ---------- */
+.topbar-actions { display: flex; align-items: center; gap: 10px; }
+.auth-area { display: flex; align-items: center; gap: 10px; }
+.user-email {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(4, 6, 12, 0.72);
+  backdrop-filter: blur(6px);
+  animation: fade 0.25s ease;
+}
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg-2);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius);
+  padding: 30px 26px;
+  box-shadow: var(--shadow);
+}
+.modal-close {
+  position: absolute;
+  top: 14px; right: 16px;
+  background: none; border: none;
+  color: var(--text-dim);
+  font-size: 1.4rem; line-height: 1;
+  cursor: pointer;
+}
+.modal-close:hover { color: var(--text); }
+.modal-title { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; }
+.modal-sub { color: var(--text-dim); font-size: 0.9rem; margin: 8px 0 20px; line-height: 1.5; }
+.auth-input {
+  width: 100%;
+  background: #131a2b;
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  outline: none;
+}
+.auth-input:focus { border-color: var(--accent); }
+.modal-or {
+  position: relative;
+  text-align: center;
+  margin: 18px 0;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
+.modal-or::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  height: 1px;
+  background: var(--panel-border);
+}
+.modal-or span { position: relative; background: var(--bg-2); padding: 0 12px; }
+.wide-ghost { width: 100%; padding: 12px; }
+.auth-msg { color: var(--accent-2); font-size: 0.85rem; margin-top: 14px; min-height: 1.2em; text-align: center; }
+
 /* ---------- responsive ---------- */
 @media (max-width: 560px) {
   .hero-title { font-size: 1.9rem; }

@@ -62,6 +62,39 @@ The `web/` folder is the entire site. Any static host works:
 python scripts/build_web_deck.py
 ```
 
+## Login & cloud sync (optional)
+
+By default, progress is saved per-browser in `localStorage` — no account needed.
+You can optionally enable **accounts + cross-device sync** with a free
+[Supabase](https://supabase.com) project. The app stays a static site; Supabase
+provides auth and storage, so there's still no server to run.
+
+The app degrades gracefully: with no Supabase config it runs exactly as before
+(local-only), and the sign-in button stays hidden.
+
+### Setup
+
+1. Create a free project at [supabase.com](https://supabase.com).
+2. In the project's **SQL Editor**, run [`supabase/schema.sql`](supabase/schema.sql)
+   (creates a `user_progress` table with row-level security).
+3. In **Project Settings → API**, copy the **Project URL** and the **anon public** key.
+4. Paste them into [`web/config.js`](web/config.js), then commit and redeploy.
+5. In **Authentication → URL Configuration**, add your deployed site URL (and
+   `http://localhost:8000` for local dev) to the allowed redirect URLs.
+6. *(Optional)* enable the **Google** provider under **Authentication → Providers**
+   to light up the "Continue with Google" button.
+
+The `anon` key is meant to be public — row-level security ensures each user can
+only read and write their own progress row.
+
+### How sync works
+
+- Sign in with a magic link (passwordless email) or Google.
+- On sign-in, your local progress is **merged** with the cloud copy (per card, the
+  more-advanced review wins; earliest `first_seen` is preserved) — so nothing you
+  studied while logged out is lost.
+- Subsequent reviews are pushed to the cloud automatically (debounced).
+
 ## Usage
 
 Run from the project root:
@@ -166,9 +199,13 @@ src/
 web/
   index.html         # single-page web app
   styles.css         # dark, modern theme
-  srs.js             # scheduler (port of src/srs.py)
+  srs.js             # scheduler (port of src/srs.py) + progress merge
   app.js             # views, session loop, keyboard shortcuts
   cards.js           # deck bundle (generated from data/cards.json)
+  config.js          # Supabase keys (empty = local-only mode)
+  auth.js            # optional login & cloud sync
+supabase/
+  schema.sql         # user_progress table + row-level security
 data/                # deck + progress
 scripts/
   build_web_deck.py  # regenerate web/cards.js from data/cards.json

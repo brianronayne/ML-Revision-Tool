@@ -116,6 +116,28 @@ const SRS = (() => {
     return counts;
   }
 
+  /* Combine two progress objects (e.g. local + cloud) without losing work.
+     Per card, keep the more-advanced entry (higher total_reviews; ties broken
+     by later next_due), but always preserve the earliest first_seen. */
+  function mergeProgress(a = {}, b = {}) {
+    const merged = {};
+    const ids = new Set([...Object.keys(a), ...Object.keys(b)]);
+    for (const id of ids) {
+      const x = a[id], y = b[id];
+      if (!x) { merged[id] = y; continue; }
+      if (!y) { merged[id] = x; continue; }
+      const xr = x.total_reviews || 0, yr = y.total_reviews || 0;
+      let winner;
+      if (xr !== yr) winner = xr > yr ? x : y;
+      else winner = new Date(x.next_due || 0) >= new Date(y.next_due || 0) ? x : y;
+      const chosen = { ...winner };
+      const seens = [x.first_seen, y.first_seen].filter(Boolean);
+      if (seens.length) chosen.first_seen = seens.sort()[0]; // earliest ISO string
+      merged[id] = chosen;
+    }
+    return merged;
+  }
+
   function allTags(cards) {
     const counts = {};
     for (const card of cards) {
@@ -130,6 +152,6 @@ const SRS = (() => {
     DEFAULT_NEW_PER_DAY,
     loadProgress, saveProgress, resetProgress,
     filterByTag, newCardsSeenToday, getDueCards,
-    updateProgress, getStats, allTags,
+    updateProgress, getStats, allTags, mergeProgress,
   };
 })();

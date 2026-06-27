@@ -18,7 +18,14 @@
       <span class="brand-dot"></span>
       <span class="brand-name">ML Revision</span>
     </div>
-    <button id="resetBtn" class="ghost-btn" title="Reset all progress">Reset progress</button>
+    <div class="topbar-actions">
+      <div id="authArea" class="auth-area hidden">
+        <span id="userEmail" class="user-email hidden"></span>
+        <button id="signInBtn" class="ghost-btn small">Sign in</button>
+        <button id="signOutBtn" class="ghost-btn small hidden">Sign out</button>
+      </div>
+      <button id="resetBtn" class="ghost-btn small" title="Reset all progress">Reset</button>
+    </div>
   </header>
 
   <main class="stage">
@@ -95,8 +102,25 @@
     <span id="deckMeta"></span>
   </footer>
 
+  <!-- Sign-in modal (only used when Supabase is configured) -->
+  <div id="authModal" class="modal-overlay hidden">
+    <div class="modal">
+      <button id="closeAuthModal" class="modal-close" aria-label="Close">&times;</button>
+      <h3 class="modal-title">Sign in</h3>
+      <p class="modal-sub">Sync your progress across devices. We'll email you a magic link — no password needed.</p>
+      <input id="authEmail" class="auth-input" type="email" placeholder="you@example.com" autocomplete="email" />
+      <button id="sendLinkBtn" class="primary-btn">Send magic link</button>
+      <div class="modal-or"><span>or</span></div>
+      <button id="googleBtn" class="ghost-btn wide-ghost">Continue with Google</button>
+      <p id="authMsg" class="auth-msg"></p>
+    </div>
+  </div>
+
   <script src="cards.js"></script>
   <script src="srs.js"></script>
+  <script src="config.js"></script>
   <script src="app.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="auth.js"></script>
 </body>
 </html>

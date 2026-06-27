@@ -130,6 +130,7 @@
     if (!revealed || !current) return;
     SRS.updateProgress(progress, current.id, rating);
     SRS.saveProgress(progress);
+    if (window.Auth && Auth.currentUser()) Auth.pushProgress(progress);
 
     counts.seen++;
     if (rating === 1) { counts.again++; againQueue.push(current); }
@@ -208,6 +209,16 @@
       renderHome(); showView("home");
     }
   });
+
+  // ---------- bridge for auth.js (optional) ----------
+  window.App = {
+    getProgress: () => progress,
+    applyRemoteProgress(remote) {
+      progress = remote;
+      SRS.saveProgress(progress);
+      renderHome();
+    },
+  };
 
   // ---------- init ----------
   buildTagSelect();
