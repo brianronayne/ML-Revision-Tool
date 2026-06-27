@@ -1,0 +1,1295 @@
+window.CARDS = [
+  {
+    "id": "8d48b4a4-87e0-48b5-9ec5-2338e527ba67",
+    "source": "REF-2BE2",
+    "question": "What is the difference between supervised and unsupervised learning?",
+    "answer": "In supervised learning every training example has a label (target), and the algorithm learns a mapping from inputs to labels. In unsupervised learning there are no labels; the algorithm finds structure in the data itself (e.g. clusters, density estimates).",
+    "tags": [
+      "supervised",
+      "unsupervised"
+    ]
+  },
+  {
+    "id": "3e5eea03-713c-4693-8cb6-039756d4ac0b",
+    "source": "REF-2BE2",
+    "question": "What is a feature vector?",
+    "answer": "A feature vector is a numerical representation of one example. Each element (feature) captures one measurable property of the object being modelled. The feature vector is typically denoted x ∈ ℝ^D, where D is the number of features.",
+    "tags": [
+      "feature-engineering",
+      "transformers"
+    ]
+  },
+  {
+    "id": "b6ccc2f1-4bcd-413b-8adc-b876334bc4a5",
+    "source": "REF-2BE2",
+    "question": "What is the difference between classification and regression?",
+    "answer": "Classification predicts a discrete class label (e.g. spam/not-spam). Regression predicts a continuous numerical value (e.g. house price). Both are supervised learning tasks.",
+    "tags": [
+      "supervised"
+    ]
+  },
+  {
+    "id": "1ce846a1-dbdf-4a68-91ac-589c3c714656",
+    "source": "REF-2BE2",
+    "question": "What is semi-supervised learning?",
+    "answer": "Semi-supervised learning uses a small labelled dataset together with a large unlabelled dataset. The unlabelled data helps the model learn the structure of the input space, improving generalisation beyond what the labelled data alone could provide.",
+    "tags": [
+      "supervised",
+      "unsupervised"
+    ]
+  },
+  {
+    "id": "fbb2711f-d3fb-4f5c-b9e6-1859735c4523",
+    "source": "REF-2BE2",
+    "question": "What is reinforcement learning and how does it differ from supervised learning?",
+    "answer": "In reinforcement learning an agent interacts with an environment, takes actions, and receives reward signals. There are no labelled training examples; the agent must discover which actions lead to high cumulative reward via trial and error. Supervised learning, by contrast, learns from a fixed dataset of (input, label) pairs.",
+    "tags": [
+      "supervised",
+      "unsupervised"
+    ]
+  },
+  {
+    "id": "123e860b-9c60-49ef-a5b0-13d5fa3b7eab",
+    "source": "REF-2BE2",
+    "question": "What is the difference between model parameters and hyperparameters?",
+    "answer": "Parameters are values learned by the training algorithm (e.g. weights in linear regression). Hyperparameters are set before training and control the learning process itself (e.g. learning rate, regularisation strength C). Hyperparameters are tuned on a validation set, not by the optimiser.",
+    "tags": [
+      "evaluation",
+      "linear-models",
+      "optimisation",
+      "regularisation"
+    ]
+  },
+  {
+    "id": "c39a2a21-a9b1-4201-a79f-adfcfa283d2f",
+    "source": "REF-2BE2",
+    "question": "What does it mean for a model to be parametric vs non-parametric?",
+    "answer": "A parametric model has a fixed number of parameters regardless of the training set size (e.g. linear regression). A non-parametric model's complexity grows with the data (e.g. k-NN stores all training examples; decision trees can grow arbitrarily deep).",
+    "tags": [
+      "evaluation",
+      "knn",
+      "linear-models",
+      "trees"
+    ]
+  },
+  {
+    "id": "ee8783ad-3493-41e9-8362-fcd80d81f4e6",
+    "source": "REF-2BE2",
+    "question": "What does linear regression optimise, and what is its loss function?",
+    "answer": "Linear regression minimises the Mean Squared Error (MSE) between predictions and targets: MSE = (1/N) Σ (f(xᵢ) − yᵢ)². The optimal weights have a closed-form solution (normal equations) or can be found via gradient descent.",
+    "tags": [
+      "linear-models",
+      "optimisation"
+    ]
+  },
+  {
+    "id": "d21510fb-dd7a-40aa-af84-d0752aacde5c",
+    "source": "REF-2BE2",
+    "question": "What is the sigmoid function and how does it produce probabilities in logistic regression?",
+    "answer": "The sigmoid (logistic) function σ(z) = 1/(1 + e^{−z}) maps any real number to (0,1). Logistic regression computes z = w·x + b and passes it through σ to obtain P(y=1|x). The model is trained by minimising the binary cross-entropy loss.",
+    "tags": [
+      "linear-models",
+      "trees"
+    ]
+  },
+  {
+    "id": "6b1b20fb-49b8-4ff3-8d47-fbae82686de0",
+    "source": "REF-2BE2",
+    "question": "How does the ID3 decision tree algorithm choose which feature to split on?",
+    "answer": "ID3 selects the feature that maximises Information Gain — the reduction in entropy after the split. Entropy H(S) = −Σ pₖ log₂(pₖ) measures class impurity. Information Gain IG(S,F) = H(S) − Σ (|Sᵥ|/|S|)·H(Sᵥ) for each value v of feature F.",
+    "tags": [
+      "trees"
+    ]
+  },
+  {
+    "id": "5ad1a3ca-e55a-4e83-85e5-052fb5deb7a5",
+    "source": "REF-2BE2",
+    "question": "What is entropy in the context of decision trees?",
+    "answer": "Entropy measures class impurity in a dataset. For a set S with classes k: H(S) = −Σ pₖ log₂(pₖ). H = 0 when all examples belong to one class (pure node); H is maximal when classes are equally distributed.",
+    "tags": [
+      "evaluation",
+      "trees"
+    ]
+  },
+  {
+    "id": "d6f377d4-89f7-4a68-b8c0-8c58680cfa75",
+    "source": "REF-2BE2",
+    "question": "How does a Support Vector Machine (SVM) find the decision boundary?",
+    "answer": "An SVM finds the hyperplane w·x + b = 0 that maximises the margin — the distance to the nearest training examples (support vectors) on each side. The margin equals 2/‖w‖. Maximising the margin is equivalent to minimising ‖w‖², a convex quadratic problem.",
+    "tags": [
+      "svm"
+    ]
+  },
+  {
+    "id": "9a21ea39-cf12-4e99-951a-761febf3f6ba",
+    "source": "REF-2BE2",
+    "question": "What is the difference between a hard-margin and soft-margin SVM?",
+    "answer": "Hard-margin SVM requires all training examples to be correctly classified (only works when data is linearly separable). Soft-margin SVM introduces slack variables ξᵢ ≥ 0 that allow misclassifications, controlled by hyperparameter C. High C → small margin (less tolerance); low C → large margin (more misclassifications allowed).",
+    "tags": [
+      "svm"
+    ]
+  },
+  {
+    "id": "a6a016d4-cf4b-4162-9950-5e099230a2b1",
+    "source": "REF-2BE2",
+    "question": "What is the kernel trick in SVMs?",
+    "answer": "The kernel trick allows SVMs to implicitly map data to a high-dimensional feature space without computing the mapping explicitly. The dual problem only requires dot products k(xᵢ, xⱼ) = φ(xᵢ)·φ(xⱼ). This makes nonlinear classification tractable.",
+    "tags": [
+      "svm"
+    ]
+  },
+  {
+    "id": "a6c197bd-8ec4-4bd4-b091-b2d4fc30858b",
+    "source": "REF-2BE2",
+    "question": "What is the RBF (Radial Basis Function) kernel?",
+    "answer": "k(xᵢ, xⱼ) = exp(−γ‖xᵢ − xⱼ‖²). It measures similarity by Gaussian decay with distance. γ controls the width: high γ → narrow Gaussians (each training example influences only nearby points); low γ → smooth decision boundary. The RBF kernel maps data into an infinite-dimensional space.",
+    "tags": [
+      "svm"
+    ]
+  },
+  {
+    "id": "ae966134-869a-4d89-bb96-137c529b0d30",
+    "source": "REF-2BE2",
+    "question": "How does k-Nearest Neighbours (k-NN) classify a new example?",
+    "answer": "k-NN finds the k training examples closest to the query point (by Euclidean distance or another metric) and returns the majority class among them (for classification) or the mean of their labels (for regression). k-NN stores all training data and does all computation at prediction time (lazy learner).",
+    "tags": [
+      "evaluation",
+      "knn"
+    ]
+  },
+  {
+    "id": "789248b5-3a53-4670-a146-41e496758659",
+    "source": "REF-2BE2",
+    "question": "What are the tradeoffs in choosing k in k-NN?",
+    "answer": "Small k (e.g. k=1): low bias, high variance — sensitive to noise, decision boundary irregular. Large k: high bias, low variance — smoothed decision boundary, may under-fit. k is tuned via cross-validation on a validation set.",
+    "tags": [
+      "evaluation",
+      "knn"
+    ]
+  },
+  {
+    "id": "5a373ec9-a48d-41d4-98a9-a84e15c03005",
+    "source": "REF-2BE2",
+    "question": "What is gradient descent and how does it work?",
+    "answer": "Gradient descent minimises a differentiable loss function f(θ) by iteratively updating parameters: θ ← θ − α∇f(θ), where α is the learning rate. Starting from a random point, each step moves in the direction of steepest descent until convergence (gradient ≈ 0).",
+    "tags": [
+      "optimisation"
+    ]
+  },
+  {
+    "id": "e4f72fd5-2ee4-45fc-a71e-d7831b77cbe0",
+    "source": "REF-2BE2",
+    "question": "What is bias in the context of model generalisation?",
+    "answer": "Bias is the systematic error from incorrect assumptions in the model. A high-bias (underfitting) model is too simple — it fails to capture the true relationship even on training data. Increasing model complexity reduces bias.",
+    "tags": [
+      "regularisation"
+    ]
+  },
+  {
+    "id": "226b7b0f-38c1-48fe-b3ae-69a7a2f98241",
+    "source": "REF-2BE2",
+    "question": "What is variance in the context of model generalisation?",
+    "answer": "Variance is the error from the model's sensitivity to small fluctuations in the training set. High-variance (overfitting) models fit training data very well but fail on unseen data. Regularisation and more data reduce variance.",
+    "tags": [
+      "regularisation"
+    ]
+  },
+  {
+    "id": "a00db95b-669f-4ae1-a830-e803ceee9d33",
+    "source": "REF-2BE2",
+    "question": "What is the bias-variance tradeoff?",
+    "answer": "As model complexity increases, bias decreases but variance increases, and vice versa. The goal is to find a 'zone of solutions' where both are acceptably low. Regularisation moves left (less complex), adding layers/features moves right.",
+    "tags": [
+      "regularisation"
+    ]
+  },
+  {
+    "id": "d8bc8afb-735b-4752-9dd9-5f6721f6b0d0",
+    "source": "REF-2BE2",
+    "question": "What is overfitting and how can you detect it?",
+    "answer": "Overfitting occurs when a model performs very well on training data but poorly on unseen data. Detection: training loss is much lower than validation/test loss. Causes: model too complex, too many features, insufficient training data, or insufficient regularisation.",
+    "tags": [
+      "regularisation"
+    ]
+  },
+  {
+    "id": "9c2dfca0-5807-4b4d-9d2f-c3eaf7cdda06",
+    "source": "REF-2BE2",
+    "question": "What is L1 regularisation (Lasso) and what property does it have?",
+    "answer": "L1 adds Σ|wⱼ| to the loss, controlled by hyperparameter C. It produces sparse models — many weights become exactly zero — effectively performing feature selection. Useful when interpretability or feature importance is needed.",
+    "tags": [
+      "feature-engineering",
+      "regularisation",
+      "transformers"
+    ]
+  },
+  {
+    "id": "d56bee3f-bd76-423a-b80e-ae0ae9a2c999",
+    "source": "REF-2BE2",
+    "question": "What is L2 regularisation (Ridge) and how does it differ from L1?",
+    "answer": "L2 adds Σwⱼ² to the loss. It penalises large weights but rarely drives them to exactly zero. L2 typically gives better predictive performance than L1 when all features are relevant. In the literature: lasso = L1, ridge = L2, elastic net combines both.",
+    "tags": [
+      "regularisation"
+    ]
+  },
+  {
+    "id": "2a2b6b61-6b83-47a6-b1bd-0bb64303e210",
+    "source": "REF-2BE2",
+    "question": "What is a Convolutional Neural Network (CNN) and what makes it suited to images?",
+    "answer": "A CNN applies trainable filter matrices across an input using the convolution operation, sliding a small filter over the image to detect local patterns. Filters are shared (parameter efficiency), and pooling layers reduce spatial dimensions. CNNs are translation-equivariant by design.",
+    "tags": [
+      "cnn",
+      "neural-nets"
+    ]
+  },
+  {
+    "id": "70031273-bf44-4c5b-9916-f6d7764ad442",
+    "source": "REF-2BE2",
+    "question": "What is max pooling and why is it used in CNNs?",
+    "answer": "Max pooling applies a max operator over non-overlapping windows (e.g. 2×2 with stride 2), keeping only the maximum activation. It reduces spatial dimensions (fewer parameters), provides translation invariance, and often improves accuracy.",
+    "tags": [
+      "cnn",
+      "evaluation",
+      "neural-nets"
+    ]
+  },
+  {
+    "id": "db864752-7cf2-4383-b045-c05b28685162",
+    "source": "REF-2BE2",
+    "question": "What are stride and padding in a CNN convolution?",
+    "answer": "Stride is the step size the filter moves at each convolution step — larger stride → smaller output. Padding adds zeros around the input border so border regions are covered and output size can be preserved. Padding is especially useful with large filters.",
+    "tags": [
+      "cnn"
+    ]
+  },
+  {
+    "id": "4b47414f-1384-410c-af58-7fd00d8e395f",
+    "source": "REF-2BE2",
+    "question": "What is a Recurrent Neural Network (RNN) and how does it handle sequential data?",
+    "answer": "An RNN processes sequences one element at a time. Each unit maintains a hidden state h_t that combines the current input x_t with the previous hidden state h_{t-1}. This memory allows the network to use context from earlier in the sequence.",
+    "tags": [
+      "evaluation",
+      "neural-nets",
+      "rnn"
+    ]
+  },
+  {
+    "id": "938cbb85-a850-45d8-b116-c040f3289c4d",
+    "source": "REF-F9BD",
+    "question": "What are good reasons NOT to use machine learning for a problem?",
+    "answer": "Avoid ML when: (1) the problem can be solved with a simple lookup or deterministic algorithm; (2) you need a fully explainable decision process; (3) data quality/quantity is insufficient; (4) errors have catastrophic consequences and the system cannot be monitored; (5) a rule-based system would be simpler, faster and equally effective.",
+    "tags": [
+      "evaluation",
+      "mlops"
+    ]
+  },
+  {
+    "id": "3d5f0d20-0923-4d72-bc86-8f49761fd344",
+    "source": "REF-F9BD",
+    "question": "What are the 9 stages of an ML project lifecycle?",
+    "answer": "1. Goal definition  2. Data collection  3. Data preparation/cleaning  4. Feature engineering  5. Model training  6. Model evaluation  7. Model deployment  8. Model serving  9. Monitoring & maintenance.",
+    "tags": [
+      "feature-engineering",
+      "mlops"
+    ]
+  },
+  {
+    "id": "c2f9e0f2-9991-4b5e-96de-642c7d3e9263",
+    "source": "REF-F9BD",
+    "question": "What is a baseline model and why is it important before training ML models?",
+    "answer": "A baseline is the simplest possible predictor (e.g. always predict the majority class, or use a simple heuristic). It sets a lower bound on performance that any ML model must beat. Without a baseline you cannot tell whether your model actually learned anything useful.",
+    "tags": [
+      "mlops"
+    ]
+  },
+  {
+    "id": "d97ca140-bd7c-4396-8979-314a0dbaf64c",
+    "source": "REF-F9BD",
+    "question": "What is a machine learning pipeline?",
+    "answer": "A pipeline is a sequence of data-transformation stages where each stage receives the previous stage's output. It includes preprocessing (scaling, encoding), feature engineering, and the model. A pipeline can be saved and deployed to production to generate predictions on new data in the same way training data was transformed.",
+    "tags": [
+      "evaluation",
+      "feature-engineering",
+      "mlops"
+    ]
+  },
+  {
+    "id": "d3bdc3a8-8f9d-4251-b70c-a8274035cb94",
+    "source": "REF-F9BD",
+    "question": "Why do ML projects commonly fail?",
+    "answer": "Common reasons: (1) unclear or unrealistic goals; (2) insufficient or poor-quality data; (3) lack of a baseline; (4) feature engineering mistakes; (5) ignoring data leakage; (6) overfitting to the validation set (leaky evaluation); (7) deployment/serving gap (training–serving skew); (8) no monitoring after deployment.",
+    "tags": [
+      "feature-engineering",
+      "mlops",
+      "regularisation"
+    ]
+  },
+  {
+    "id": "aafb4afe-1d81-4cec-b8cc-174217daf06d",
+    "source": "REF-F9BD",
+    "question": "What is the difference between training, validation, and test sets?",
+    "answer": "Training set: used to learn model parameters. Validation set: used to tune hyperparameters and make model selection decisions. Test set: held out until the final evaluation to give an unbiased estimate of generalisation performance. Never use the test set during development.",
+    "tags": [
+      "evaluation"
+    ]
+  },
+  {
+    "id": "9d160cd8-c987-4e87-9094-0415d30c7900",
+    "source": "REF-F9BD",
+    "question": "What is cross-validation and when should you use it?",
+    "answer": "Cross-validation (k-fold) splits the data into k folds, trains on k-1 folds and evaluates on the remaining fold, rotating until every fold has been the evaluation fold. Average performance is a robust estimate. Use it when your dataset is too small to spare a separate validation set.",
+    "tags": [
+      "evaluation"
+    ]
+  },
+  {
+    "id": "be90d296-f709-42b6-b820-b4fdf0c9455d",
+    "source": "REF-F9BD",
+    "question": "What is grid search for hyperparameter tuning?",
+    "answer": "Grid search discretises each hyperparameter into a set of candidate values and evaluates every combination by training a model and measuring validation performance. Simple but exponentially expensive in the number of hyperparameters. Often sufficient in practice for small search spaces.",
+    "tags": [
+      "optimisation"
+    ]
+  },
+  {
+    "id": "be07d86f-b2e6-488e-86f7-0770b00edf7e",
+    "source": "REF-F9BD",
+    "question": "What is the categorical cross-entropy (CCE) loss and when is it used?",
+    "answer": "CCE = −Σⱼ yᵢ,ⱼ log₂(ŷᵢ,ⱼ), where yᵢ is the one-hot encoded label and ŷᵢ is the softmax output. It is used for multiclass classification. The output layer uses a single softmax unit producing a probability distribution over C classes.",
+    "tags": [
+      "feature-engineering",
+      "neural-nets",
+      "trees"
+    ]
+  },
+  {
+    "id": "bead5ce3-a723-4ab5-9eb6-a29b7db0e0a9",
+    "source": "REF-F9BD",
+    "question": "What is binary cross-entropy (BCE) and when is it used?",
+    "answer": "BCE = −yᵢ log₂(ŷᵢ) − (1−yᵢ) log₂(1−ŷᵢ). It is used for binary classification (one sigmoid output). It is also used for multi-label classification (C independent sigmoid units, one per class).",
+    "tags": [
+      "trees"
+    ]
+  },
+  {
+    "id": "f3df2fa3-8201-4a40-b94f-98324ed3a629",
+    "source": "REF-F9BD",
+    "question": "How does softmax differ from sigmoid in the output layer?",
+    "answer": "Softmax: ŷᵢ,ⱼ = e^{zᵢ,ⱼ} / Σₖ e^{zᵢ,ₖ}. Outputs sum to 1 → represents a probability distribution over C classes (used in multiclass classification). Sigmoid: each output unit is independent (0,1). Outputs can sum to any value in (0,C) → used in binary or multi-label classification.",
+    "tags": [
+      "neural-nets"
+    ]
+  },
+  {
+    "id": "c5b84287-4652-4386-a39e-b9cabf7cb165",
+    "source": "REF-F9BD",
+    "question": "What parameter initialisation strategies are commonly used for neural networks?",
+    "answer": "Common strategies: random normal (mean 0, std 0.05), random uniform ([−0.05, 0.05]), Xavier normal (std = √(2/(in+out))), Xavier uniform (±√(6/(in+out))). Biases are usually initialised to zero. Xavier variants are recommended; the choice can be a tunable hyperparameter.",
+    "tags": [
+      "neural-nets"
+    ]
+  },
+  {
+    "id": "21a34967-2530-48d7-a1c4-c41094f771e1",
+    "source": "REF-F9BD",
+    "question": "What is minibatch stochastic gradient descent (SGD)?",
+    "answer": "Instead of computing the gradient over the full dataset (gradient descent) or a single example (SGD), minibatch SGD approximates the gradient using a small random subset (minibatch) of the training data. Typical batch sizes: 32, 64, 128, 256. This speeds up computation and reduces memory usage.",
+    "tags": [
+      "optimisation"
+    ]
+  },
+  {
+    "id": "c3f8725d-e16a-480e-9711-81ceb649bcf0",
+    "source": "REF-F9BD",
+    "question": "What is the Momentum optimiser and how does it improve training?",
+    "answer": "Momentum accumulates a running average of past gradients and uses it to guide parameter updates. It dampens oscillations and accelerates convergence in relevant directions, removing the need to manually tune learning rate schedules.",
+    "tags": [
+      "optimisation"
+    ]
+  },
+  {
+    "id": "4fd04d39-294b-4a36-824c-1b1072cbd092",
+    "source": "REF-F9BD",
+    "question": "What is the Adam optimiser and why is it widely recommended?",
+    "answer": "Adam combines momentum (first moment) with RMSProp (adaptive per-parameter learning rates based on second moment of gradients). It automatically adapts the learning rate and handles sparse gradients well. It is the recommended default starting point for most neural network training tasks.",
+    "tags": [
+      "neural-nets",
+      "optimisation"
+    ]
+  },
+  {
+    "id": "21ec8957-7b03-416a-a92b-728c797260e6",
+    "source": "REF-F9BD",
+    "question": "What are learning rate decay schedules and why are they used?",
+    "answer": "Learning rate decay reduces α over the course of training. Common schedules: time-based (αₙ = αₙ₋₁/(1+d·n)), step-based (αₙ = α₀·d^⌊(1+n)/r⌋), exponential (αₙ = α₀·e^{−d·n}). They allow fast early learning and fine-tuned convergence later, preventing oscillation around the minimum.",
+    "tags": [
+      "llm",
+      "optimisation"
+    ]
+  },
+  {
+    "id": "398d1004-31f0-4081-a932-1d41b5e50bbe",
+    "source": "REF-F9BD",
+    "question": "What is dropout regularisation?",
+    "answer": "During training, each forward pass randomly sets a fraction (dropout rate ∈[0,1]) of unit activations to zero. This forces the network to learn redundant representations and prevents co-adaptation of units. At inference, all units are used (with outputs scaled by the keep probability).",
+    "tags": [
+      "neural-nets",
+      "regularisation"
+    ]
+  },
+  {
+    "id": "0bcde19a-efec-43b4-a96f-95cdf48acc3e",
+    "source": "REF-F9BD",
+    "question": "What is early stopping as a regularisation technique?",
+    "answer": "Early stopping saves a checkpoint after each epoch and monitors validation performance. Training is stopped when validation performance stops improving (or begins to degrade). The best checkpoint is returned. It prevents overfitting without needing to choose explicit regularisation strength.",
+    "tags": [
+      "regularisation"
+    ]
+  },
+  {
+    "id": "3f9699c9-4664-4886-a81a-309534a4988b",
+    "source": "REF-F9BD",
+    "question": "What is batch normalisation and what benefit does it provide?",
+    "answer": "Batch normalisation standardises the output of each layer (zero mean, unit variance over the mini-batch) before passing it to the next layer, then applies a learned scale (γ) and shift (β). It accelerates training, improves stability, and often has a regularising effect.",
+    "tags": [
+      "feature-engineering",
+      "neural-nets",
+      "optimisation",
+      "regularisation"
+    ]
+  },
+  {
+    "id": "dd70897b-d193-421c-b082-62506a21a94e",
+    "source": "REF-F9BD",
+    "question": "What is transfer learning?",
+    "answer": "Transfer learning reuses parameters learned on one task/dataset to initialise or build a model for a different task. Two approaches: (1) fine-tune: initialise with pretrained weights and continue training all parameters; (2) feature extraction: freeze pretrained parameters and only train new layers added on top.",
+    "tags": [
+      "llm",
+      "mlops"
+    ]
+  },
+  {
+    "id": "337ccc58-c2dc-44c4-9e25-2e82ef0c3a6a",
+    "source": "REF-F9BD",
+    "question": "Name some common pre-trained models for image and text tasks.",
+    "answer": "Images: VGG16/VGG19, InceptionV3, ResNet50. Text/NLP: BERT (Transformer encoder), ELMo (bi-directional LSTM). These models were trained on massive datasets and their representations transfer well even when the downstream dataset is smaller.",
+    "tags": [
+      "llm",
+      "rnn",
+      "transformers"
+    ]
+  },
+  {
+    "id": "e87c2dff-f9a3-4ace-8b40-1f8d21748873",
+    "source": "REF-F9BD",
+    "question": "What neural network architecture should you start with for sequence data?",
+    "answer": "For sequences (text, time series): a gated RNN (LSTM or GRU), a CNN, or a Transformer. For images: CNN with at least one convolutional layer, max-pooling, and a fully connected layer. Alternatively, start from a pretrained model (transfer learning) to avoid training from scratch.",
+    "tags": [
+      "cnn",
+      "llm",
+      "mlops",
+      "neural-nets",
+      "rnn",
+      "transformers"
+    ]
+  },
+  {
+    "id": "61163b68-47cd-4ef1-9f13-0714811294b3",
+    "source": "REF-F9BD",
+    "question": "What is the deep double descent phenomenon?",
+    "answer": "As model size grows, validation error typically decreases, then increases (classic overfitting), then decreases again — a second descent. Observed in CNNs and Transformers. It suggests that very large models can generalise well despite being heavily overparameterised.",
+    "tags": [
+      "cnn",
+      "regularisation",
+      "transformers"
+    ]
+  },
+  {
+    "id": "440fa60d-b1cf-4c36-b827-48b7af2f803d",
+    "source": "REF-F9BD",
+    "question": "What hyperparameters are high-sensitivity in neural network training?",
+    "answer": "High sensitivity: learning rate, learning rate schedule, loss function, number of units per layer. Medium sensitivity: parameter initialisation strategy, number of layers, layer-specific properties. Start tuning the high-sensitivity ones first.",
+    "tags": [
+      "neural-nets",
+      "optimisation",
+      "transformers"
+    ]
+  },
+  {
+    "id": "fc286404-7d04-4a93-b510-c55c03c78e72",
+    "source": "REF-8C1B",
+    "question": "What is a language model?",
+    "answer": "A language model assigns a probability to a sequence of tokens. It models the joint probability P(t₁, t₂, …, tₙ) or, equivalently, the conditional probability of each token given its context: P(tᵢ | t₁, …, tᵢ₋₁). Language models can generate text by sampling next-token probabilities.",
+    "tags": [
+      "llm",
+      "nlp"
+    ]
+  },
+  {
+    "id": "c8db935a-7031-4a0f-b6f0-724099952a4c",
+    "source": "REF-8C1B",
+    "question": "What is an n-gram language model?",
+    "answer": "An n-gram model approximates P(tᵢ | t₁,…,tᵢ₋₁) using only the previous n−1 tokens (Markov assumption). Probabilities are estimated by counting n-gram frequencies in a training corpus. Common choices: bigram (n=2), trigram (n=3). n-gram counts grow exponentially with n.",
+    "tags": [
+      "nlp"
+    ]
+  },
+  {
+    "id": "b3183e4b-6bc7-4438-a1d1-a6cf14b88c2e",
+    "source": "REF-8C1B",
+    "question": "What is the Maximum Likelihood Estimate (MLE) for a trigram probability?",
+    "answer": "P(tᵢ | tᵢ₋₂, tᵢ₋₁) = C(tᵢ₋₂, tᵢ₋₁, tᵢ) / C(tᵢ₋₂, tᵢ₋₁), where C(·) is the count of that n-gram in the training corpus. MLE becomes more reliable with larger corpora.",
+    "tags": [
+      "nlp"
+    ]
+  },
+  {
+    "id": "1f92287b-13a4-4e8f-8fa4-87e9b65141d9",
+    "source": "REF-8C1B",
+    "question": "What is the backoff strategy for n-gram models?",
+    "answer": "If a higher-order n-gram (e.g. trigram) was not seen in training, back off to a lower-order n-gram (bigram, then unigram). This prevents zero probabilities for unseen n-grams while retaining higher-order context when available.",
+    "tags": [
+      "nlp"
+    ]
+  },
+  {
+    "id": "e7451b43-323a-4925-a30d-552c7732e19d",
+    "source": "REF-8C1B",
+    "question": "What is Laplace (add-one) smoothing and why is it needed?",
+    "answer": "Laplace smoothing adds 1 to every token count: P(tᵢ) = (C(tᵢ)+1)/(W+V), where W = total tokens, V = vocabulary size. Without it, any token absent from the training corpus gets probability zero, making the model unable to handle out-of-vocabulary words.",
+    "tags": [
+      "nlp"
+    ]
+  },
+  {
+    "id": "d923f197-c1b1-4891-be7d-0a5590287df6",
+    "source": "REF-8C1B",
+    "question": "What are the key limitations of count-based n-gram models?",
+    "answer": "1. Cannot handle out-of-vocabulary (OOV) words without smoothing. 2. Cannot capture long-range dependencies (typically n ≤ 5 for memory reasons). 3. Fixed n-gram counts cannot be adapted to downstream tasks without retraining. 4. Memory grows exponentially with n. These limitations motivated neural language models (RNNs, Transformers).",
+    "tags": [
+      "mlops",
+      "nlp",
+      "rnn",
+      "transformers"
+    ]
+  },
+  {
+    "id": "31008b4f-d673-4d8e-a4f8-a69f141c495a",
+    "source": "REF-8C1B",
+    "question": "What is perplexity as an evaluation metric for language models?",
+    "answer": "Perplexity = exp(−(1/D) Σᵢ log P(tᵢ | context)). It measures how confidently the model predicts held-out text. Lower perplexity is better. Intuitively, a perplexity of k means the model is on average as uncertain as if choosing uniformly among k options at each step.",
+    "tags": [
+      "evaluation",
+      "nlp"
+    ]
+  },
+  {
+    "id": "52bbffcd-8916-404c-bcf5-cfd750e64061",
+    "source": "REF-8C1B",
+    "question": "What does a perplexity of 10 mean intuitively?",
+    "answer": "On average, the model is as uncertain as if it were choosing uniformly from 10 equally likely next tokens at each step. If the vocabulary is V tokens and all probabilities were equal, perplexity would equal V. Lower perplexity (e.g. GPT-2 ≈ 20, modern LLMs < 5) indicates a better model.",
+    "tags": [
+      "evaluation",
+      "llm",
+      "nlp"
+    ]
+  },
+  {
+    "id": "b25cda85-6ad6-41e5-bdbb-b554ba3e65dd",
+    "source": "REF-8C1B",
+    "question": "What is ROUGE-1 and what does it measure?",
+    "answer": "ROUGE-1 measures unigram (single-token) overlap between generated text g and reference text r: Recall = (matching tokens) / (total tokens in r). It captures how much of the reference content appears in the generated output. Scores range from 0 to 1; only meaningful comparatively across models on the same test set.",
+    "tags": [
+      "evaluation"
+    ]
+  },
+  {
+    "id": "10b3e39b-87ff-43b9-9029-3b723eaeac95",
+    "source": "REF-8C1B",
+    "question": "What is ROUGE-L and how does it differ from ROUGE-N?",
+    "answer": "ROUGE-L uses the Longest Common Subsequence (LCS) between generated and reference texts rather than counting fixed-length n-gram overlaps. LCS captures sentence structure and word order without requiring consecutive matches. Preferred when structural/grammatical coherence matters (e.g. summarisation, translation).",
+    "tags": [
+      "evaluation",
+      "nlp"
+    ]
+  },
+  {
+    "id": "2fbead3c-7ec9-482b-9454-e2b0e079e6e7",
+    "source": "REF-8C1B",
+    "question": "How is the Elo rating system used to compare language models?",
+    "answer": "Models start at 1500 Elo. After pairwise comparisons (human or LM judges pick which output is better), ratings update: Elo(A) ← Elo(A) + k·(score(A) − P(A wins)), where P(A wins) = 1/(1+10^{(Elo(B)−Elo(A))/400}). More wins against strong opponents raise the rating more. Requires ~100–500+ comparisons per model for stability.",
+    "tags": [
+      "evaluation",
+      "nlp"
+    ]
+  },
+  {
+    "id": "2fb8f99c-92b2-4dd4-94b0-0d50cc09d2d2",
+    "source": "REF-8C1B",
+    "question": "What is a word embedding?",
+    "answer": "A word embedding maps a discrete vocabulary token to a dense real-valued vector in ℝ^d (typically d = 64–4096). Embeddings are learned during training so semantically similar words have nearby vectors. They replace one-hot encoding and allow neural networks to generalise across vocabulary.",
+    "tags": [
+      "feature-engineering",
+      "neural-nets",
+      "nlp"
+    ]
+  },
+  {
+    "id": "6f4644ab-7963-4bf8-b2cc-3375d7afbd8b",
+    "source": "REF-8C1B",
+    "question": "What is the bag-of-words (BoW) representation?",
+    "answer": "BoW represents a document as a vector of token counts (or binary presence indicators), ignoring word order. The vector dimension equals the vocabulary size. Simple and effective for text classification but loses sequential information.",
+    "tags": [
+      "nlp"
+    ]
+  },
+  {
+    "id": "e69c2177-7648-4841-8d6a-7fd971ae47c1",
+    "source": "REF-8C1B",
+    "question": "What are the ReLU, sigmoid, and tanh activation functions?",
+    "answer": "ReLU: f(z) = max(0, z). Computationally cheap, avoids vanishing gradients for positive inputs. Most common in hidden layers. Sigmoid: σ(z) = 1/(1+e^{−z}) → (0,1). Used in binary classification output. Tanh: (e^z − e^{−z})/(e^z + e^{−z}) → (−1,1). Zero-centred, smoother than sigmoid. Used in RNN hidden states.",
+    "tags": [
+      "neural-nets",
+      "rnn"
+    ]
+  },
+  {
+    "id": "83416359-e487-4db8-b9e3-299857dc0ca0",
+    "source": "REF-8C1B",
+    "question": "What is a Multilayer Perceptron (MLP) / Feedforward Neural Network?",
+    "answer": "An MLP is a neural network of stacked fully-connected layers. Each layer computes z = Wx + b followed by a non-linear activation (e.g. ReLU). Information flows in one direction (input → hidden → output). Universal approximators given enough hidden units.",
+    "tags": [
+      "neural-nets"
+    ]
+  },
+  {
+    "id": "33c488d7-860a-4d69-8be3-e2f002964bca",
+    "source": "REF-8C1B",
+    "question": "What is mini-batch gradient descent?",
+    "answer": "Instead of computing gradients over the full dataset or a single sample, mini-batch gradient descent uses a small random subset (batch) of data per update. It is faster than full-batch gradient descent and more stable than single-sample SGD. Batch size is a hyperparameter (commonly 32–256).",
+    "tags": [
+      "optimisation"
+    ]
+  },
+  {
+    "id": "2d7be77f-0439-4e54-b81d-5b6bed56f2ae",
+    "source": "REF-8C1B",
+    "question": "What is the hidden state in an RNN and what is its purpose?",
+    "answer": "The hidden state h_t is a vector updated at each time step: h_t = g(W_h·x_t + U_h·h_{t-1} + b_h). It acts as the RNN's memory, carrying information from previous time steps. g is typically tanh. The initial hidden state h_0 is usually a zero vector.",
+    "tags": [
+      "neural-nets",
+      "rnn"
+    ]
+  },
+  {
+    "id": "4f4dbaeb-a473-4eb0-a10a-417340a1bf9f",
+    "source": "REF-8C1B",
+    "question": "What is the Elman RNN and how does it process sequences?",
+    "answer": "The Elman RNN (1990) processes a sequence one embedding at a time. At each step t it computes h_t = g(W_h·x_t + U_h·h_{t-1} + b_h) and an output y_t from h_t. Each RNN unit is a full vector-valued layer. Deeper networks stack multiple RNN layers, passing one layer's outputs as the next layer's inputs.",
+    "tags": [
+      "evaluation",
+      "rnn"
+    ]
+  },
+  {
+    "id": "90c81132-b4c3-4dac-aeab-10464dcb5a92",
+    "source": "REF-8C1B",
+    "question": "What are the main limitations of RNNs compared to Transformers?",
+    "answer": "1. Long-range dependencies: hidden state compresses the entire history, losing distant context. 2. Sequential processing: cannot parallelise over time steps during training. 3. Vanishing gradients over long sequences. Transformers overcome all three via self-attention.",
+    "tags": [
+      "evaluation",
+      "neural-nets",
+      "rnn",
+      "transformers"
+    ]
+  },
+  {
+    "id": "1f619cf1-d7be-4203-b20c-e9a773b2dbc6",
+    "source": "REF-8C1B",
+    "question": "What are the three main Transformer architectures and their typical use cases?",
+    "answer": "Encoder-decoder: originally for machine translation; encoder reads the input, decoder generates output. Encoder-only (e.g. BERT): processes the full sequence bidirectionally; used for classification and representation tasks. Decoder-only (e.g. GPT): autoregressive; used for language modelling and chat LMs.",
+    "tags": [
+      "evaluation",
+      "llm",
+      "nlp",
+      "transformers"
+    ]
+  },
+  {
+    "id": "8bf4d4ae-8c14-495f-b669-e0b963ac135b",
+    "source": "REF-8C1B",
+    "question": "What are the two key innovations introduced by the Transformer architecture?",
+    "answer": "1. Self-attention: allows each token to attend to all other tokens in the sequence (or past tokens in the decoder), capturing long-range dependencies without sequential processing. 2. Positional encoding (e.g. RoPE): injects token-order information since Transformer computations are permutation-invariant.",
+    "tags": [
+      "evaluation",
+      "transformers"
+    ]
+  },
+  {
+    "id": "dfdca8d7-0fe5-42ff-96de-7f60378fa03d",
+    "source": "REF-8C1B",
+    "question": "What roles do Queries, Keys, and Values play in self-attention?",
+    "answer": "For each input token, three vectors are computed: query q, key k, value v (via learned weight matrices W_Q, W_K, W_V). Attention scores for token t: q_t · k_p for every position p. Scores → softmax → attention weights. Output = weighted sum of value vectors. Intuitively: q asks 'what am I looking for?', k signals 'what do I contain?', v provides 'my information'.",
+    "tags": [
+      "neural-nets",
+      "transformers"
+    ]
+  },
+  {
+    "id": "6a05a6e7-341b-43e2-84ec-b48c46b6ef94",
+    "source": "REF-8C1B",
+    "question": "Why are attention scores scaled by √d_k before softmax?",
+    "answer": "With large dimensionality d_k, dot products between q and k vectors can become very large in magnitude. This pushes softmax outputs towards 0 or 1, producing very small gradients (vanishing gradient). Dividing by √d_k keeps scores in a moderate range and maintains more informative gradient signals.",
+    "tags": [
+      "neural-nets",
+      "transformers"
+    ]
+  },
+  {
+    "id": "bc773ea8-4b49-4f16-956e-c0aefda5612f",
+    "source": "REF-8C1B",
+    "question": "What is the causal mask in a decoder-only Transformer?",
+    "answer": "The causal mask prevents each position from attending to future positions. For position t, the mask sets attention scores for positions > t to −∞ (which become 0 after softmax). This ensures the model is autoregressive: predictions at each position depend only on past and present tokens, enabling valid language modelling.",
+    "tags": [
+      "neural-nets",
+      "nlp",
+      "transformers"
+    ]
+  },
+  {
+    "id": "dd2306a9-88f0-41e3-8999-0c9ae52b3cca",
+    "source": "REF-8C1B",
+    "question": "What is multi-head attention and why is it used?",
+    "answer": "Multi-head attention runs H independent self-attention heads in parallel, each with its own Q/K/V weight matrices. Each head's output has reduced dimensionality (d_k/H). Outputs from all heads are concatenated and projected. This allows the model to simultaneously attend to different types of relationships (e.g. syntactic, semantic, long-range) across different representation subspaces.",
+    "tags": [
+      "transformers"
+    ]
+  },
+  {
+    "id": "5d35f529-0d04-411c-82af-b35b973e124e",
+    "source": "REF-8C1B",
+    "question": "What is Rotary Position Embedding (RoPE)?",
+    "answer": "RoPE encodes positional information by rotating query and key vectors based on their token position before computing attention scores. Pairs of dimensions are rotated by angle θ_p·t (position t, frequency θ_p). A key property: the angle between rotated vectors encodes their relative distance, enabling the model to generalise to sequences longer than those seen during training.",
+    "tags": [
+      "transformers"
+    ]
+  },
+  {
+    "id": "3e441687-d84b-4ae3-8a2e-6aae5ea9b2c7",
+    "source": "REF-8C1B",
+    "question": "What is a residual (skip) connection and what problem does it solve?",
+    "answer": "A residual connection adds the layer's input directly to its output: y = f(x) + x. It solves the vanishing gradient problem in deep networks: during backpropagation the gradient of earlier layers receives an additive +1 term, preventing it from shrinking to zero even when weights are small.",
+    "tags": [
+      "neural-nets"
+    ]
+  },
+  {
+    "id": "58246343-87a7-416e-9c4d-039cca78bda4",
+    "source": "REF-8C1B",
+    "question": "What is the vanishing gradient problem in deep neural networks?",
+    "answer": "During backpropagation through many layers, gradients are multiplied by weight matrices at each layer. If weights are < 1, the gradient shrinks exponentially with depth (e.g. 0.5^32 ≈ 2×10^{−10}), making parameter updates in early layers negligibly small and halting learning. Solutions: ReLU activations, residual connections, proper initialisation.",
+    "tags": [
+      "neural-nets",
+      "transformers"
+    ]
+  },
+  {
+    "id": "f7d1ba27-c8e7-4874-b9f3-187b2d63f4e8",
+    "source": "REF-8C1B",
+    "question": "What is RMSNorm and why is it used in Transformers?",
+    "answer": "RMSNorm normalises an input vector x by dividing by its Root Mean Square: RMS(x) = √(mean(xᵢ²)), then scales with a learned vector γ: RMSNorm(x) = γ ⊙ (x / RMS(x)). Applied before self-attention and MLP in each decoder block. Stabilises training by keeping layer input magnitudes consistent, preventing excessively large or small gradient updates.",
+    "tags": [
+      "feature-engineering",
+      "neural-nets",
+      "transformers"
+    ]
+  },
+  {
+    "id": "de677116-5409-41c1-974a-524425ff69e3",
+    "source": "REF-8C1B",
+    "question": "What is KV caching and how does it speed up autoregressive inference?",
+    "answer": "During autoregressive generation, KV caching stores the key and value matrices for all previously generated tokens. For each new token, only its K and V vectors need to be computed and appended; the rest are reused from cache. This eliminates reprocessing the full sequence at each step, significantly reducing computation for long sequences.",
+    "tags": [
+      "evaluation",
+      "transformers"
+    ]
+  },
+  {
+    "id": "2f155ae0-dfb8-425a-92ae-39a622ccb539",
+    "source": "REF-8C1B",
+    "question": "Describe the six steps of self-attention for a single input token.",
+    "answer": "1. Compute Q, K, V: multiply input matrix X by W_Q, W_K, W_V. 2. Compute raw scores: q_t · k_p for all positions p. 3. Scale scores by 1/√d_k. 4. Apply causal mask (set future positions to −∞). 5. Apply softmax → attention weights. 6. Compute output: weighted sum of value vectors using attention weights.",
+    "tags": [
+      "neural-nets",
+      "transformers"
+    ]
+  },
+  {
+    "id": "bdd22025-bb58-45b5-bc3c-ae7e6f175939",
+    "source": "REF-8C1B",
+    "question": "What is the attention formula in matrix form?",
+    "answer": "Attention(Q, K, V) = softmax(QKᵀ/√d_k + M) · V, where Q and V are L×d_k matrices, Kᵀ is d_k×L, M is the causal mask matrix (0 or −∞), and L is the sequence length. Matrix multiplication computes attention scores for all positions simultaneously.",
+    "tags": [
+      "neural-nets",
+      "transformers"
+    ]
+  },
+  {
+    "id": "8cddd0e1-afff-4ca1-8ee0-6b180cce38a4",
+    "source": "REF-8C1B",
+    "question": "What does the position-wise MLP in a Transformer decoder block do?",
+    "answer": "After self-attention, each token's output vector g_t is independently processed by a two-layer MLP: z_t = W₂(ReLU(W₁·g_t + b₁)) + b₂. The same MLP (with the same weights) is applied independently to each position. It adds a second transformation step that can encode complex non-linear relationships.",
+    "tags": [
+      "evaluation",
+      "neural-nets",
+      "transformers"
+    ]
+  },
+  {
+    "id": "f62e006d-89e4-45ff-baa8-6d5ab88c37a4",
+    "source": "REF-8C1B",
+    "question": "What is the difference between a pretrained (base) model and a finetuned model?",
+    "answer": "A pretrained (base) model is trained on large unlabelled data to predict the next token; it learns general language representations. A finetuned model undergoes additional supervised training on labelled examples (e.g. instruction-response pairs) enabling it to follow instructions, answer questions, or perform specific tasks.",
+    "tags": [
+      "llm",
+      "mlops",
+      "supervised"
+    ]
+  },
+  {
+    "id": "3f1bf81c-da0d-4866-9ec2-51b852a76be5",
+    "source": "REF-8C1B",
+    "question": "What is Likert scale evaluation for language models?",
+    "answer": "Human raters score model outputs on a symmetric numeric scale (e.g. −2 to 2) for dimensions like coherence, informativeness, and factual accuracy. Provides absolute quality estimates but suffers from central tendency bias (raters avoid extremes) and inconsistent scale interpretation across raters.",
+    "tags": [
+      "evaluation",
+      "nlp"
+    ]
+  },
+  {
+    "id": "1ddbe8f8-aec8-4435-bb66-77367887694c",
+    "source": "REF-8C1B",
+    "question": "How does the encoder-only Transformer (BERT) differ from the decoder-only (GPT)?",
+    "answer": "BERT uses bidirectional self-attention (each token attends to all others, left and right) and is trained with masked language modelling (predict randomly masked tokens). Best for classification and encoding tasks. GPT uses causal (left-to-right) attention and is trained autoregressively (predict next token). Best for generation tasks.",
+    "tags": [
+      "llm",
+      "nlp",
+      "transformers"
+    ]
+  },
+  {
+    "id": "b0a2b797-158e-4f67-844a-60a78a251ad5",
+    "source": "REF-2BE2",
+    "question": "What is ensemble learning and why does it work?",
+    "answer": "Ensemble learning trains many low-accuracy 'weak' models and combines their predictions to obtain a high-accuracy meta-model. It works because well-performing models tend to agree on the correct answer, while errors from different weak models are uncorrelated and cancel out in a weighted vote.",
+    "tags": [
+      "ensemble",
+      "evaluation"
+    ]
+  },
+  {
+    "id": "ec7023f1-d8b5-41a7-bd1c-346e5fb14cab",
+    "source": "REF-2BE2",
+    "question": "What is the difference between boosting and bagging?",
+    "answer": "Bagging: create B random bootstrap samples of the training data and train a weak model on each, then average/vote. Reduces variance. Boosting: iteratively train weak models where each new model focuses on fixing the errors of previous ones. Reduces bias. Boosting is sequential; bagging is parallelisable.",
+    "tags": [
+      "ensemble"
+    ]
+  },
+  {
+    "id": "db493485-28e1-439b-914b-78e829d94191",
+    "source": "REF-2BE2",
+    "question": "How does random forest differ from vanilla bagging?",
+    "answer": "Random forest adds one modification to bagging: at each split, only a random subset of features is considered (not all features). This de-correlates the trees — if one feature is dominant, it won't appear in every tree, reducing correlated errors. Key hyperparameters: number of trees B, size of the random feature subset per split.",
+    "tags": [
+      "ensemble"
+    ]
+  },
+  {
+    "id": "ca6e887e-8d21-4ce8-9886-70ed7857dd6b",
+    "source": "REF-2BE2",
+    "question": "How does gradient boosting work for regression?",
+    "answer": "1. Initialise with a constant model f₀ = mean(yᵢ). 2. Compute residuals: ŷᵢ = yᵢ − f(xᵢ). 3. Train a new decision tree fₘ on the residuals. 4. Update: f ← f + α·fₘ (α = learning rate). 5. Repeat until M trees are combined. Each tree partially fixes the errors of the previous ensemble, reducing MSE.",
+    "tags": [
+      "ensemble",
+      "neural-nets",
+      "optimisation",
+      "trees"
+    ]
+  },
+  {
+    "id": "b972fdc9-be26-4d70-a4eb-a44636bd9992",
+    "source": "REF-2BE2",
+    "question": "Why is gradient boosting called 'gradient' boosting?",
+    "answer": "The residuals ŷᵢ = yᵢ − f(xᵢ) act as a proxy for the gradient of the MSE loss. Just as gradient descent moves parameters in the direction of the negative gradient, gradient boosting moves the model by adding trees that fit the residuals — the negative gradient of the loss with respect to the model's predictions.",
+    "tags": [
+      "ensemble",
+      "neural-nets",
+      "optimisation"
+    ]
+  },
+  {
+    "id": "de36132e-969e-4450-92c6-f9dc7abd3bb5",
+    "source": "REF-2BE2",
+    "question": "What are the principal hyperparameters in gradient boosting, and how do they affect fit?",
+    "answer": "Number of trees M: more trees → lower bias, risk of overfitting. Learning rate α: smaller → more trees needed, but better generalisation. Tree depth: deeper trees → more complex interactions captured, slower training. Gradient boosting reduces bias (unlike bagging which reduces variance), so it can overfit — regularise via shallow trees and low learning rate.",
+    "tags": [
+      "ensemble",
+      "optimisation",
+      "regularisation"
+    ]
+  },
+  {
+    "id": "55295d87-6774-4ff2-bb46-87fc5b225e44",
+    "source": "REF-2BE2",
+    "question": "What are gated RNNs and why were they developed?",
+    "answer": "Vanilla RNNs suffer from vanishing gradients and forgetting long-range dependencies. Gated RNNs (LSTM, GRU) add gate mechanisms — sigmoid units that control what information to write, read, and erase from memory cells. Gates take values in (0,1): near 0 preserves the existing memory; near 1 overwrites it. Because gated units apply an identity-like function, backpropagation gradients do not vanish.",
+    "tags": [
+      "evaluation",
+      "neural-nets",
+      "rnn"
+    ]
+  },
+  {
+    "id": "5cfbd845-52e9-4eaa-82f3-d86c78ac797e",
+    "source": "REF-2BE2",
+    "question": "How does a minimal gated GRU unit work?",
+    "answer": "A GRU unit computes: (1) candidate hidden state: h̃ = tanh(W·xₜ + U·hₜ₋₁ + b). (2) forget gate: Γ = σ(m·xₜ + o·hₜ₋₁ + a). (3) new hidden state: hₜ = Γ·h̃ + (1−Γ)·hₜ₋₁. When Γ≈0, the unit keeps its previous state (memory preserved). When Γ≈1, the unit is overwritten with the candidate. Gate values are learned from data.",
+    "tags": [
+      "neural-nets",
+      "rnn"
+    ]
+  },
+  {
+    "id": "60dcf0e1-1b8f-4317-b932-1ccb4659eb51",
+    "source": "REF-2BE2",
+    "question": "What is the one-vs-rest strategy for multiclass classification with binary classifiers?",
+    "answer": "For C classes, train C binary classifiers. Classifier c treats class c as positive and all other classes as negative. To classify a new example, apply all C models and pick the class whose model returns the highest confidence score. Works with any algorithm that returns a score (logistic regression, SVM).",
+    "tags": [
+      "linear-models",
+      "svm"
+    ]
+  },
+  {
+    "id": "fce4b80b-716f-4dfb-8124-8151277ebade",
+    "source": "REF-2BE2",
+    "question": "What is sequence-to-sequence (seq2seq) learning?",
+    "answer": "A learning paradigm where both input X and output Y are sequences of potentially different lengths. Applications: machine translation, summarisation, dialogue systems. Architecture: an encoder reads X into a fixed embedding vector; a decoder generates Y from that embedding. Both are trained jointly via backpropagation. An attention mechanism allows the decoder to selectively focus on encoder states rather than relying on a single compressed vector.",
+    "tags": [
+      "transformers"
+    ]
+  },
+  {
+    "id": "ef7432ec-ef34-4ffb-8fcd-1375fdc23d67",
+    "source": "REF-F9BD",
+    "question": "What is a confusion matrix?",
+    "answer": "A table summarising classification results across classes. For binary classification: rows = actual class, columns = predicted class. Cells: TP (true positives), TN (true negatives), FP (false positives), FN (false negatives). Useful for identifying mistake patterns (e.g. which classes are most often confused).",
+    "tags": [
+      "evaluation"
+    ]
+  },
+  {
+    "id": "cbf92d95-3760-4e4f-9617-4d9bca849015",
+    "source": "REF-F9BD",
+    "question": "What are precision and recall, and how do they differ?",
+    "answer": "Precision = TP / (TP + FP): of all examples predicted positive, what fraction are truly positive? (Quality of positive predictions.) Recall = TP / (TP + FN): of all truly positive examples, what fraction did the model find? (Coverage of positives.) Spam detection: high precision (avoid misclassifying legit mail); lower recall is tolerable.",
+    "tags": [
+      "evaluation"
+    ]
+  },
+  {
+    "id": "fbb82eb3-2e13-4d7e-95c5-da31cca0acf9",
+    "source": "REF-F9BD",
+    "question": "What is the precision-recall tradeoff?",
+    "answer": "Increasing precision typically decreases recall and vice versa. You can tune the tradeoff by adjusting the decision threshold: a higher threshold (e.g. 0.9 instead of 0.5) means fewer positive predictions → higher precision, lower recall. Choose by assigning weights to FP and FN based on the business cost of each error type.",
+    "tags": [
+      "evaluation"
+    ]
+  },
+  {
+    "id": "8bada766-6e57-4b23-bbc9-8d2ebc6e78c0",
+    "source": "REF-F9BD",
+    "question": "What is the F1-score and what does it capture?",
+    "answer": "F1 = 2 × (precision × recall) / (precision + recall) — the harmonic mean of precision and recall. A single metric that balances both. The harmonic mean penalises extreme imbalances: a model with precision=1 and recall=0 gets F1=0. Fβ generalises: β > 1 weights recall more; β < 1 weights precision more.",
+    "tags": [
+      "evaluation",
+      "feature-engineering"
+    ]
+  },
+  {
+    "id": "df3afaea-58a3-4026-9f95-fdc830c2c617",
+    "source": "REF-F9BD",
+    "question": "What is classification accuracy and when is it a misleading metric?",
+    "answer": "Accuracy = (TP + TN) / (TP + TN + FP + FN) — fraction of correctly classified examples. Misleading on imbalanced datasets: a model that always predicts the majority class (e.g. 99% of examples) achieves 99% accuracy while detecting nothing useful. Use per-class accuracy or Cohen's kappa instead.",
+    "tags": [
+      "evaluation",
+      "feature-engineering"
+    ]
+  },
+  {
+    "id": "0c85ced1-6b1c-44f5-b242-d44a0abff64f",
+    "source": "REF-F9BD",
+    "question": "What is Cohen's kappa and why is it preferred over accuracy for imbalanced problems?",
+    "answer": "κ = (pₒ − pₑ) / (1 − pₑ), where pₒ = observed agreement and pₑ = expected agreement by chance. Unlike accuracy, kappa accounts for how much agreement would occur by chance given class frequencies. κ ∈ [0.61, 0.80] → good model; κ ≥ 0.81 → very good. Values ≤ 0 indicate a problem.",
+    "tags": [
+      "evaluation",
+      "feature-engineering"
+    ]
+  },
+  {
+    "id": "50bb9f03-6679-49b8-8a92-eb00527e9ea9",
+    "source": "REF-F9BD",
+    "question": "What is the ROC curve and the AUC metric?",
+    "answer": "ROC (Receiver Operating Characteristic) plots True Positive Rate (TPR=recall) vs False Positive Rate (FPR = FP/(FP+TN)) across all decision thresholds. AUC (Area Under Curve): 1.0 = perfect; 0.5 = random; < 0.5 = likely a bug. ROC/AUC only applies to models that return a continuous score (logistic regression, trees, NNs).",
+    "tags": [
+      "evaluation",
+      "linear-models"
+    ]
+  },
+  {
+    "id": "b9215c8a-f38d-4982-87b6-fa82d48b52a6",
+    "source": "REF-F9BD",
+    "question": "What is one-hot encoding and when is it used?",
+    "answer": "One-hot encoding converts a categorical variable with C classes into a binary vector of length C. Class c → a vector of zeros with a 1 at position c. Used to represent multiclass labels for neural network training (e.g. {dog, cat, other} → [1,0,0], [0,1,0], [0,0,1]).",
+    "tags": [
+      "feature-engineering",
+      "neural-nets"
+    ]
+  },
+  {
+    "id": "ae9c8826-724a-4528-a8ca-86c85f0c5e10",
+    "source": "REF-F9BD",
+    "question": "What are properties of a good feature?",
+    "answer": "1. High predictive power — correlated with the target label. 2. Fast computability — must be available within production latency constraints. 3. Reliability — must be available consistently (no dependency on flaky external APIs). 4. Low correlation with other features — correlated features add little value and increase fragility. 5. Stable distribution — training and production distributions should match.",
+    "tags": [
+      "feature-engineering",
+      "mlops",
+      "transformers"
+    ]
+  },
+  {
+    "id": "79a67c17-26e9-4b3a-9cd6-724a005bfcea",
+    "source": "REF-F9BD",
+    "question": "What is feature selection and why is it important?",
+    "answer": "Feature selection identifies and keeps only the most predictive features, discarding redundant ones. Benefits: reduces training time, decreases overfitting (fewer irrelevant features → lower variance), improves model interpretability, and reduces memory usage. L1 regularisation (Lasso) performs implicit feature selection by driving irrelevant weights to zero.",
+    "tags": [
+      "feature-engineering",
+      "regularisation"
+    ]
+  },
+  {
+    "id": "06716b3d-71e8-434d-9064-8a1c2327a3f1",
+    "source": "REF-F9BD",
+    "question": "What is data leakage and how does it occur during feature extraction?",
+    "answer": "Data leakage is when information from the test/validation set inadvertently influences training, causing over-optimistic evaluation. Common causes: fitting a CountVectorizer or scaler on the full dataset (including test data) before splitting; using target-correlated features computed after the prediction point. Prevention: always fit preprocessing objects on training data only, then transform test data separately.",
+    "tags": [
+      "evaluation",
+      "mlops"
+    ]
+  },
+  {
+    "id": "23072dfd-4d73-42c9-b1e5-7bb9feac5906",
+    "source": "REF-F9BD",
+    "question": "What is TF-IDF and what problem does it solve over raw bag-of-words?",
+    "answer": "TF-IDF (Term Frequency-Inverse Document Frequency): TF(t,d) = frequency of term t in document d. IDF(t) = log(N / df(t)), where N = total docs, df(t) = docs containing t. TF-IDF = TF × IDF. Downweights common words (high df) and emphasises rare, distinctive terms. Addresses the BoW problem where frequent stop words dominate feature vectors.",
+    "tags": [
+      "feature-engineering",
+      "nlp"
+    ]
+  },
+  {
+    "id": "0c129729-0a47-4a1f-870b-2487cc277c25",
+    "source": "REF-F9BD",
+    "question": "What is class imbalance and what are the main strategies to handle it?",
+    "answer": "Class imbalance occurs when one class vastly outnumbers another (e.g. fraud detection: 1% fraud). Strategies: 1. Oversampling minority class (e.g. SMOTE — synthetic minority oversampling). 2. Undersampling majority class. 3. Class-weighted loss function (penalise errors on minority class more). 4. Use metrics immune to imbalance: F1, Cohen's kappa, AUC rather than accuracy.",
+    "tags": [
+      "evaluation",
+      "feature-engineering"
+    ]
+  },
+  {
+    "id": "13d50f3c-e060-4174-bf9d-3e2a7d794127",
+    "source": "REF-8C1B",
+    "question": "What is supervised fine-tuning (SFT) of an LLM?",
+    "answer": "SFT trains a pretrained base model on a labelled dataset of (instruction, response) pairs using standard cross-entropy loss, but only on the response tokens (input tokens are masked with −100 so loss is not computed on them). The model learns to produce task-appropriate outputs while retaining general language knowledge. A small learning rate (e.g. 5×10⁻⁵) is used to preserve pretrained weights.",
+    "tags": [
+      "llm",
+      "mlops",
+      "optimisation",
+      "trees"
+    ]
+  },
+  {
+    "id": "5ce07cc6-69e6-412a-89e7-0a88f49c8c08",
+    "source": "REF-8C1B",
+    "question": "What is instruction tuning and what is the ChatML prompting format?",
+    "answer": "Instruction tuning fine-tunes an LLM on diverse (instruction, response) pairs to follow arbitrary natural-language instructions. ChatML format: <|im_start|>{role}\\n{message}\\n<|im_end|>, with roles: system, user, assistant. The system message provides context/persona; user provides instructions; assistant provides responses. The format must match between training and inference.",
+    "tags": [
+      "llm"
+    ]
+  },
+  {
+    "id": "f86ebc9b-595d-4068-a615-9f22d645d7b8",
+    "source": "REF-8C1B",
+    "question": "What is the key insight from Meta's LIMA paper on instruction tuning data?",
+    "answer": "LIMA showed that quality, not quantity, is crucial for instruction fine-tuning. A carefully curated, diverse set of ~1,000 examples can enable strong instruction-following in a sufficiently large pretrained model, outperforming larger low-quality datasets. Modern LLMs often use LLM-generated fine-tuning datasets (AI-assisted labelling).",
+    "tags": [
+      "llm",
+      "mlops"
+    ]
+  },
+  {
+    "id": "aa6e9320-387a-4404-9736-36da294d089a",
+    "source": "REF-8C1B",
+    "question": "What is greedy decoding vs sampling in LLM text generation?",
+    "answer": "Greedy decoding always selects the highest-probability next token. Deterministic and fast, but tends to produce repetitive, uninspired text. Best for tasks needing precision (maths, code). Sampling draws from the full probability distribution, introducing controlled randomness. Better for creative tasks, dialogue, brainstorming.",
+    "tags": [
+      "evaluation",
+      "llm"
+    ]
+  },
+  {
+    "id": "473c4d9e-1f34-420c-a45b-a12721a7a20e",
+    "source": "REF-8C1B",
+    "question": "What is temperature in LLM sampling and how does it affect outputs?",
+    "answer": "Temperature T divides logits before softmax: Pr(j) = exp(o_j/T) / Σ exp(o_k/T). T < 1: sharpens the distribution → more focused, deterministic outputs. T = 1: standard softmax probabilities. T > 1: flattens the distribution → more random, creative outputs. Practical ranges: 0.1–0.3 for factual/code; 0.7–0.8 for conversation; 1.5+ for creative tasks.",
+    "tags": [
+      "llm",
+      "neural-nets"
+    ]
+  },
+  {
+    "id": "6db529c2-3a46-4ca9-ada1-0fda290c8257",
+    "source": "REF-8C1B",
+    "question": "What is top-k sampling?",
+    "answer": "Top-k sampling restricts the next-token distribution to the k most probable tokens. Process: (1) rank tokens by probability, (2) keep only top k, (3) renormalise to sum to 1, (4) sample. Low k (5–10): focused, precise. Mid k (20–50): balanced. High k (100–500): diverse/creative. Prevents sampling from very low-probability (nonsense) tokens.",
+    "tags": [
+      "evaluation",
+      "feature-engineering",
+      "llm"
+    ]
+  },
+  {
+    "id": "c4ad2db1-0468-4491-8c2c-be130a460cb4",
+    "source": "REF-8C1B",
+    "question": "What is nucleus (top-p) sampling?",
+    "answer": "Instead of a fixed k, top-p sampling selects the smallest set of tokens whose cumulative probability exceeds threshold p (e.g. 0.9). When the model is confident (peaked distribution), fewer tokens are considered. When uncertain (flat distribution), more tokens enter the nucleus. This adapts to the model's uncertainty per token — often combined with temperature and top-k.",
+    "tags": [
+      "llm"
+    ]
+  },
+  {
+    "id": "52c50ae8-75d0-42ae-91bd-32f6505ef294",
+    "source": "REF-8C1B",
+    "question": "What are frequency and presence penalties in LLM decoding?",
+    "answer": "Frequency penalty: reduces logit of a token proportionally to how many times it has appeared: o_j ← o_j − α·count(j). Discourages repetition. Presence penalty: reduces logit of a token if it appeared at all, regardless of count: o_j ← o_j − γ (if token appeared). Encourages the model to introduce new topics. Both are applied before softmax. Useful for avoiding loops and repetition in generation.",
+    "tags": [
+      "llm",
+      "neural-nets"
+    ]
+  },
+  {
+    "id": "a7a57a0a-744e-4ae1-9992-5a3333b81a36",
+    "source": "REF-8C1B",
+    "question": "What is LoRA (Low-Rank Adaptation)?",
+    "answer": "LoRA is a parameter-efficient fine-tuning method. Instead of updating all model weights, it inserts small trainable low-rank matrices (A and B) beside frozen pretrained weight matrices: ΔW = A·B, where A ∈ ℝ^{d×r} and B ∈ ℝ^{r×k}, r ≪ min(d,k). Only A and B are trained. This dramatically reduces the number of trainable parameters (e.g. from billions to millions) while achieving near-full fine-tuning performance.",
+    "tags": [
+      "llm",
+      "mlops"
+    ]
+  },
+  {
+    "id": "6ba7290a-2485-409c-96f7-a0878257ea95",
+    "source": "REF-8C1B",
+    "question": "What is tokenisation and why is subword tokenisation preferred over word-level?",
+    "answer": "Tokenisation splits raw text into the smallest units (tokens) the model processes. Word-level vocabulary is huge (millions of surface forms across languages) and cannot handle OOV words. Subword tokenisation (e.g. BPE, WordPiece, SentencePiece) breaks words into frequent subword units, keeping vocabulary manageable (~32K–100K tokens) while handling any word by decomposing it into known subwords.",
+    "tags": [
+      "evaluation",
+      "nlp"
+    ]
+  },
+  {
+    "id": "084dad47-1e29-4de6-83c3-7b17f5497cdc",
+    "source": "REF-8C1B",
+    "question": "What is byte-pair encoding (BPE) tokenisation?",
+    "answer": "BPE is a bottom-up subword tokenisation algorithm. Starting from a character-level vocabulary, it iteratively merges the most frequent adjacent pair of tokens into a new token. This continues until a target vocabulary size is reached. Result: common words become single tokens; rare words are split into frequent subword pieces. BPE is used by GPT-2/3/4 and many modern LLMs.",
+    "tags": [
+      "llm",
+      "nlp"
+    ]
+  },
+  {
+    "id": "8517c734-569f-4c50-90f4-7b5fc0b3b339",
+    "source": "REF-8C1B",
+    "question": "What is an embedding layer (nn.Embedding in PyTorch)?",
+    "answer": "An embedding layer is a learnable lookup table mapping discrete token indices to dense vectors. For vocabulary size V and embedding dimension d, the matrix E ∈ ℝ^{V×d} is trained by gradient descent. Padding tokens are mapped to zero vectors and excluded from gradient updates. In large LLMs, embedding matrices can have billions of parameters (V up to 100K+, d up to 8K+).",
+    "tags": [
+      "cnn",
+      "llm",
+      "nlp",
+      "optimisation"
+    ]
+  },
+  {
+    "id": "70092ab1-2b0a-4b6c-9f28-b73b6c18e941",
+    "source": "REF-8C1B",
+    "question": "What is the attention mask in Transformer fine-tuning (different from the causal mask)?",
+    "answer": "The attention mask is a binary tensor indicating which tokens are real data (1) vs padding (0). It prevents the model from attending to padding tokens added to equalise sequence lengths in a batch. Distinct from the causal mask, which prevents attending to future tokens during autoregressive generation. Both are applied together during decoder-only model training.",
+    "tags": [
+      "cnn",
+      "llm",
+      "transformers"
+    ]
+  },
+  {
+    "id": "65bf0bf5-a49f-4721-9f50-456278d0bbde",
+    "source": "REF-8C1B",
+    "question": "How is a training example structured for language model fine-tuning?",
+    "answer": "The text is split into an input sequence and a target sequence shifted by one token. For fine-tuning on (instruction, response) pairs: input tokens are masked (label = −100) so loss is only computed on response tokens. The model processes the full concatenation [input + response + EOS] as input_ids, but only learns to predict the response and EOS tokens.",
+    "tags": [
+      "evaluation",
+      "llm",
+      "nlp"
+    ]
+  },
+  {
+    "id": "7530e2da-fd6f-4e09-88c3-6d11bf63895c",
+    "source": "REF-8C1B",
+    "question": "What is a context window in a language model?",
+    "answer": "The context window (or context length) is the maximum number of tokens the model can attend to at once during training or inference. Modern LLMs support 8K–1M+ tokens. During training, text is split into context-window-sized chunks. Longer context windows enable the model to capture longer-range dependencies but require more memory (KV cache grows linearly with sequence length).",
+    "tags": [
+      "llm",
+      "nlp",
+      "transformers"
+    ]
+  },
+  {
+    "id": "8e7c8580-fcce-4e19-a9fd-a4991aaa40f9",
+    "source": "REF-F9BD",
+    "question": "What is training-serving skew and how does it cause model degradation?",
+    "answer": "Training-serving skew occurs when the feature distribution seen in production differs from training data. Causes: feature computation pipeline differs between training and serving; data drift (user behaviour changes); concept drift (relationship between features and label changes). Detection: monitor feature statistics and prediction distributions in production.",
+    "tags": [
+      "mlops"
+    ]
+  },
+  {
+    "id": "543d7669-2b4c-4d9a-bb1b-3ac8dcf970e4",
+    "source": "REF-F9BD",
+    "question": "What is data drift vs concept drift?",
+    "answer": "Data drift: the distribution of input features P(X) changes in production (e.g. new user demographics). Concept drift: the relationship between inputs and outputs P(Y|X) changes (e.g. a word changes meaning). Both can degrade model performance without any code change. Monitoring: track feature statistics, output distributions, and — if labels are available — performance metrics.",
+    "tags": [
+      "evaluation",
+      "mlops"
+    ]
+  },
+  {
+    "id": "d380f12f-ac6f-4720-8fb9-0e3f74eec4f0",
+    "source": "REF-F9BD",
+    "question": "What triggers model retraining in production?",
+    "answer": "Common triggers: (1) scheduled retraining on a fixed cadence (daily, weekly); (2) performance metric drops below a threshold (online evaluation); (3) data drift detected (feature distribution shift exceeds threshold); (4) business event (major product change, market event). Retraining strategy depends on how quickly the model degrades and the cost of retraining.",
+    "tags": [
+      "evaluation",
+      "mlops"
+    ]
+  }
+];

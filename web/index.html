@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <title>ML Revision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="glow"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span class="brand-name">ML Revision</span>
+    </div>
+    <button id="resetBtn" class="ghost-btn" title="Reset all progress">Reset progress</button>
+  </header>
+
+  <main class="stage">
+
+    <!-- ===================== HOME ===================== -->
+    <section id="home" class="view">
+      <h1 class="hero-title">Sharpen your <span class="grad">ML</span> recall</h1>
+      <p class="hero-sub">Spaced-repetition flashcards from three ML textbooks.</p>
+
+      <div class="stats-grid" id="statsGrid"><!-- filled by JS --></div>
+
+      <div class="panel controls">
+        <div class="control-row">
+          <label class="control-label" for="tagSelect">Topic</label>
+          <div class="select-wrap">
+            <select id="tagSelect"></select>
+          </div>
+        </div>
+        <div class="control-row">
+          <label class="control-label" for="newLimit">New cards / day</label>
+          <input id="newLimit" class="num-input" type="number" min="0" max="200" value="20" />
+        </div>
+        <button id="startBtn" class="primary-btn">Start review</button>
+        <p id="dueHint" class="due-hint"></p>
+      </div>
+    </section>
+
+    <!-- ===================== REVIEW ===================== -->
+    <section id="review" class="view hidden">
+      <div class="review-top">
+        <button id="exitBtn" class="ghost-btn small">&larr; Exit</button>
+        <div class="progress-meta"><span id="progressLabel">0 / 0</span></div>
+        <div class="scope-pill" id="scopePill">all topics</div>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+      <div class="card-area">
+        <div class="flashcard" id="flashcard">
+          <div class="flash-face flash-front">
+            <div class="card-tags" id="frontTags"></div>
+            <div class="card-q" id="questionText"></div>
+            <div class="card-source" id="frontSource"></div>
+          </div>
+          <div class="flash-face flash-back">
+            <div class="card-a-label">Answer</div>
+            <div class="card-a" id="answerText"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-area">
+        <button id="revealBtn" class="primary-btn wide">Reveal answer <span class="kbd">Space</span></button>
+        <div id="ratingRow" class="rating-row hidden">
+          <button class="rate-btn again" data-rating="1"><span class="rate-key">1</span> Again</button>
+          <button class="rate-btn hard"  data-rating="2"><span class="rate-key">2</span> Hard</button>
+          <button class="rate-btn good"  data-rating="3"><span class="rate-key">3</span> Good</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SUMMARY ===================== -->
+    <section id="summary" class="view hidden">
+      <div class="panel summary-panel">
+        <div class="summary-check">&#10003;</div>
+        <h2>Session complete</h2>
+        <div class="summary-stats" id="summaryStats"></div>
+        <button id="homeBtn" class="primary-btn">Back to home</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span id="deckMeta"></span>
+  </footer>
+
+  <script src="cards.js"></script>
+  <script src="srs.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

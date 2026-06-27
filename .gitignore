@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+data/progress.json
+
+# Copyrighted source textbooks — kept locally only, not for publication.
+resource/
+
+# Private decipher key mapping source codes back to real book titles.
+source_map.private.json
